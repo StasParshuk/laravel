@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::name('admin.')->prefix("admin")->middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource("products",\App\Http\Controllers\Admin\ProductsController::class)->except(["show"]);
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware("auth")->name('home');
