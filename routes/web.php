@@ -17,13 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+ dz_21_categories_product_factor_seed
 Route::name('admin.')->prefix("admin")->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-    Route::resource("products",\App\Http\Controllers\Admin\ProductsController::class)->except(["show"]);
-});
 
 
 Auth::routes();
