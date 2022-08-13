@@ -1,6 +1,6 @@
 <?php
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 'On');
+ini_set('display_errors', 'On'); // сообщения с ошибками будут показываться
+error_reporting(E_ALL);
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
@@ -33,6 +33,7 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 */
 
 require __DIR__.'/../vendor/autoload.php';
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -53,4 +54,3 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
-

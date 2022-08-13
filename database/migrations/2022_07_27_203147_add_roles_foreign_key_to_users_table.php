@@ -16,7 +16,7 @@ return new class extends Migration {
             Schema::table('users', function (Blueprint $table) {
                 if (!Schema::hasColumn('users', 'role_id')) {
 
-                    $table->foreignId('role_id')->after('id')->constrained('roles');
+                    $table->foreignId('role_id')->after('id')->default(2)->constrained('roles');
 
 //                    $table->unsignedBigInteger('role_id')->after('id');
 //
