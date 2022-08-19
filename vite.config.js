@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'public/assets/fonts/flaticon.scss',
+                'public/assets/scss/style.scss',
             ],
             refresh: true,
         }),
