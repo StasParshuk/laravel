@@ -48,6 +48,7 @@
                                 <div class="form-group">
                                     <input id="date" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{ old('birthdate') }}" required autocomplete="birthdate" autofocus>
 
+
                                     @error('birthdate')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -75,6 +76,7 @@
 
                                 <div class="form-group">
                                     <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
 
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
