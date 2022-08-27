@@ -1,24 +1,17 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 })->name("welcome");
+
 Route::get('/test', function () {
     return view('indexx');
 });
+
 Route::get('/wishlist', function () {
     return view('wishlist');
 })->name("wishlist");
@@ -43,34 +36,47 @@ Route::get('/order-track', function () {
     return view('abouts.order-track');
 })->name("order-track");
 
-Route::get('/shop', function () {
-    return view('shop.shop-grid');
-})->name("shop-1");
-
-
-Route::get('/shop/product', function () {
-    return view('shop.product');
-})->name("shop-one");
-
 Route::get('/blog', function () {
-    return view('blog.blog-many');
+    return view('blog.index');
 })->name("blog-many");
 
 Route::get('/blog/1', function () {
     return view('blog.blog-one');
 })->name("blog-one");
 
+Route::get('/shop', function () {
+    return view('shop.shop-grid');
+})->name("compare");
+
+
+Route::get('shop/{product}', function (\App\Models\Product $product) {
+    return view('shop.product', compact(["product"]));
+})->name("shop.one");
+
+
+Route::get('products/', [\App\Http\Controllers\Guest\ProductsController::class, "index"])->name("guest.index");
 
 
 
-Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(function() {
-    Route::get('/dashboard', function () {
-        return view('dashboard', ['role' => 'Admin']);
-    })->name('dashboard');
+
+
+
+Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(
+    function () {Route::get('/dashboard', function () {return view('admin.dashboard', ['role' => 'Admin']);})->name('dashboard');
 
     Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class)->except(['show']);
+
+    Route::get('products', [\App\Http\Controllers\Admin\ProductsController::class, "index"])->name("products.index");
+    Route::get('products/create', [\App\Http\Controllers\Admin\ProductsController::class, "create"])->name("products.create");
+    Route::post('products', [\App\Http\Controllers\Admin\ProductsController::class, "store"])->name("products.store");
+
+    Route::get('products/{product}', [\App\Http\Controllers\Admin\ProductsController::class, "show"])->name("products.show");
+    Route::get('products/{product}/edit', [\App\Http\Controllers\Admin\ProductsController::class, "edit"])->name("products.edit");
+    Route::patch('products/{product}', [\App\Http\Controllers\Admin\ProductsController::class, "update"])->name("products.update");
+    Route::delete('products/{delete}', [\App\Http\Controllers\Admin\ProductsController::class, "destroy"])->name("products.destroy");
+
 });
 
-        Auth::routes();
+Auth::routes();
 
-            Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware("auth")->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware("auth")->name('home');
