@@ -9,10 +9,11 @@
                     <div class="login-register-form"
                          style="background-image: url('{{asset( "assets/images/inner-pages/login-bg.png")}}');">
                         <div class="top-title text-center ">
-                            <h2>Create Category</h2>
+                            <h2>Edit Category</h2>
                         </div>
                         <form class="common-form " method="POST" enctype="multipart/form-data" action="{{ route('admin.category.update',$product->id) }}">
                             @csrf
+                            @method("patch")
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -48,7 +49,7 @@
                             <div class="mb-3">
                                 <input type="file" placeholder="thumbnail"
                                        class="form-control"
-                                       value="{{old("thumbnail")}}" required autofocus>
+                                       value="{{old("thumbnail")}}"  autofocus>
                             </div>
 
 

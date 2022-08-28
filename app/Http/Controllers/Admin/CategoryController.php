@@ -30,10 +30,9 @@ class CategoryController extends Controller
     {
 
             $data = request()->validate($request->rules());
-            dd($data);
            $product = Category::create($data);
 
-            return redirect()->route("admin.categories.index")->with('status', "The category #{$product->id} was successfully created!");
+            return redirect()->route("admin.category.index")->with('status', "The category #{$product->id} was successfully created!");
 
 
 
@@ -50,13 +49,13 @@ class CategoryController extends Controller
     {
         $data = request()->validate($request->rules());
         $product->update($data);
-        return redirect(route("admin.categories.index"));
+        return redirect(route("admin.category.index"));
     }
 
     public function destroy(Category $product)
     {
         $product->delete();
-        return redirect(route("admin.categories.index"));
+        return redirect(route("admin.category.index"))->with('status', "The category  was successfully Deleted!");
     }
 
     public function show(Category $product)
