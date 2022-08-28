@@ -75,6 +75,18 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(
     Route::patch('products/{product}', [\App\Http\Controllers\Admin\ProductsController::class, "update"])->name("products.update");
     Route::delete('products/{delete}', [\App\Http\Controllers\Admin\ProductsController::class, "destroy"])->name("products.destroy");
 
+    Route::name("category")->group(function (){
+        Route::get('category', [\App\Http\Controllers\Admin\CategoryController::class, "index"])->name(".index");
+        Route::get('category/create', [\App\Http\Controllers\Admin\CategoryController::class, "create"])->name(".create");
+        Route::post('category', [\App\Http\Controllers\Admin\CategoryController::class, "store"])->name(".store");
+
+        Route::get('category/{product}', [\App\Http\Controllers\Admin\CategoryController::class, "show"])->name(".show");
+        Route::get('category/{product}/edit', [\App\Http\Controllers\Admin\CategoryController::class, "edit"])->name(".edit");
+        Route::patch('category/{product}', [\App\Http\Controllers\Admin\CategoryController::class, "update"])->name(".update");
+        Route::delete('category/{delete}', [\App\Http\Controllers\Admin\CategoryController::class, "destroy"])->name(".destroy");}
+
+    );
+
 });
 
 Auth::routes();

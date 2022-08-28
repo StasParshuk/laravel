@@ -10,9 +10,9 @@
         "larapack/dd": "^1.1",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.14.1",
+        "laravel/telescope": "^4.9",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^4.0",
-      "ext-http": "*"
+        "laravel/ui": "^4.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
