@@ -9,20 +9,25 @@
     <!-- Title For This Document -->
     <title> Laravel</title>
     <!-- Favicon For This Document -->
-    <link rel="shortcut icon" href=" {{ asset("assets//images/logo/favicon-32x32.png")}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset("assets/images/logo/favicon-32x32.png")}}" type="image/x-icon">
     <!-- Bootstrap 5 Css -->
     <link rel="stylesheet" href="{{ asset("assets/css/bootstrap.5.1.1.min.css")}}">
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <!-- FlatIcon Css -->
     <link rel="stylesheet" href="{{ asset("assets/fonts/flaticon.css")}}">
 
     <!-- Slick Slider Css -->
+
+
+    <!-- Slick Slider Css -->
     <link rel="stylesheet" href="{{ asset("assets/css/plugin/slick.css")}}">
     <!--  Ui Tabs Css -->
-    <link rel="stylesheet" href="{{ asset("assets/plugin/jquery-ui.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/css/plugin/jquery-ui.min.css")}}">
     <!-- Magnific-popup Css -->
-    <link rel="stylesheet" href= "{{ asset("assets/css/plugin/magnific-popup.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/css/plugin/magnific-popup.css")}}">
     <!-- Nice Select Css -->
     <link rel="stylesheet" href="{{ asset("assets/css/plugin/nice-select.v1.0.css")}}">
     <!-- Animate Css -->
@@ -30,884 +35,393 @@
     <!-- Style Css -->
     <link rel="stylesheet" href="{{ asset("assets/css/style.css")}}">
 
+
+    <link rel="stylesheet" href="{{ asset("build/assets/app.c090eeea.css")}}">
+    <link rel="stylesheet" href="{{ asset("build/assets/flaticon.cf1ee0ee.css")}}">
+    <link rel="stylesheet" href="{{ asset("build/assets/style.6577e428.css")}}">
+
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'public/assets/fonts/flaticon.scss',
+    'public/assets/scss/style.scss' ])
 </head>
 
 <body class="shoe">
-    <!-- ==========Preloader========== -->
+<!-- ==========Preloader========== -->
 {{--    <div class="loader"><span>Karte...</span></div>--}}
-    <!-- ==========Preloader========== -->
-    <!--===scroll bottom to top===-->
-    <a href="#0" class="scrollToTop"><i class="flaticon-up-arrow"></i></a>
-    <!--===scroll bottom to top===-->
+<!-- ==========Preloader========== -->
+<!--===scroll bottom to top===-->
+<a href="#0" class="scrollToTop"><i class="flaticon-up-arrow "></i></a>
+<!--===scroll bottom to top===-->
 
-    <!-- header-default start -->
-    <header class="header-style-3">
-        <!-- Start Desktop Menu -->
-        <div class="menubox">
-            <div class="container-fluid">
-                <div class="row d-lg-none d-block">
-                    <div class="mobile-menu ">
-                        <div class="mobile-menu__menu-top border-bottom-0">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="menu-info d-flex justify-content-between align-items-center">
-                                        <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                            href="{{route("welcome")}}" class="logo"> <img src="{{asset("assets/images/logo/logo.png")}} "
-                                                alt=""> </a>
-                                        <div class="cart-holder">
-                                            <a href="{{route("cart")}}" class="cart cart-icon position-relative">
-                                                <i class="flaticon-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-closer"></div>
-                        <div class="mobile-menu__sidebar-menu">
-                            <div class="menu-closer two"> <span> Close Menu</span> <span class="cross"><i
-                                        class="flaticon-cross"></i></span> </div>
-                            <div class="search-box-holder">
-                                <form action="#0">
-                                    <div class="form-group search-box menu"> <input type="text" class="form-control"
-                                            placeholder="Search for products"> <span class="search-icon"> <i
-                                                class="flaticon-magnifying-glass"></i> </span> </div>
-                                </form>
-                            </div>
-                            <ul class="page-dropdown-menu">
-                                <li class="dropdown-list"> <a href="#0"> <span>Home </span> <span class="menuarrow"> <i
-                                                class="flaticon-next-1"></i> </span> </a>
-                                    <ul class="dropdown">
-                                        <li> <a href="{{route("welcome")}}">Home Page 01</a> </li>
-                                        <li> <a href="index-2.html">Home Page 02</a> </li>
-                                        <li> <a href="index-3.html">Home Page 03</a> </li>
-                                        <li> <a href="index-4.html">Home Page 04</a> </li>
-                                        <li> <a href="index-5.html">Home Page 05</a> </li>
-                                        <li> <a href="index-6.html">Home Page 06</a> </li>
-                                        <li> <a href="index-7.html">Home Page 07</a> </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-list"> <a href="#0"> <span>Shop </span> <span class="menuarrow"> <i
-                                                class="flaticon-next-1"></i> </span> </a>
-                                    <ul class="dropdown">
-                                        <li class="subhed position-relative"> <a href="#0"> <span>Shop Details Style
-                                                </span> <span class="menuarrowtwo"> <i class="flaticon-next-1"></i>
-                                                </span> </a>
-                                            <ul class="subdropdown">
-                                                <li> <a href="{{route("shop-one")}}">Shop Details 01</a> </li>
-                                                <li> <a href="{{route("shop-one")}}">Shop Details 02</a> </li>
-                                                <li> <a href="{{route("shop-one")}}">Shop Details 03</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a href="{{route("shop-1")}}"> Shop Grid</a> </li>
-                                        <li> <a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a> </li>
-                                        <li> <a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a> </li>
-                                        <li> <a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a> </li>
-                                        <li> <a href="shop-list-left-sidebar.html">Shop LIst Left Sidebar</a> </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-list"> <a href="#0"> <span>Features </span> <span class="menuarrow">
-                                            <i class="flaticon-next-1"></i> </span> </a>
-                                    <ul class="dropdown">
-                                        <li class="subhed position-relative"> <a href="#0"> <span>Category</span> <span
-                                                    class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span>
-                                            </a>
-                                            <ul class="subdropdown">
-                                                <li> <a href="{{route("shop-1")}}">Latest Shoes</a> </li>
-                                                <li> <a href="{{route("shop-1")}}">New Shoes</a> </li>
-                                                <li> <a href="{{route("shop-1")}}">Casual Shoes</a> </li>
-                                                <li> <a href="{{route("shop-1")}}">Office Shoes</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li class="subhed position-relative"> <a href="#0"> <span>Offers</span> <span
-                                                    class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span>
-                                            </a>
-                                            <ul class="subdropdown">
-                                                <li> <a href="{{route("shop-1")}}">New Arrivals </a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Shirts</a> </li>
-                                                <li> <a href="shop-grid-right-sidebar.html">Polos</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Jeans</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Casual Dress</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li class="subhed position-relative"> <a href="#0"> <span>accessories</span>
-                                                <span class="menuarrowtwo"> <i class="flaticon-next-1"></i>
-                                                </span> </a>
-                                            <ul class="subdropdown">
-                                                <li> <a href="shop-grid-left-sidebar.html">Latest Items </a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Quick Deal</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Shoes Items</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Hot Deal</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">Fast Services </a> </li>
-                                            </ul>
-                                        </li>
-                                        <li class="subhed position-relative"> <a href="#0"> <span>Discount</span> <span
-                                                    class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span>
-                                            </a>
-                                            <ul class="subdropdown">
-                                                <li> <a href="shop-grid-left-sidebar.html">10% Off</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">20% Off</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">30% Off</a> </li>
-                                                <li> <a href="shop-grid-left-sidebar.html">40% Off</a> </li>
-                                                <li> <a href="shop-list-left-sidebar.html">50% Off</a> </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-list"> <a href="#0"> <span>Pages</span> <span class="menuarrow"> <i
-                                                class="flaticon-next-1"></i> </span> </a>
-                                    <ul class=" dropdown ">
-                                        <li><a href="{{route("about")}}"> About Us </a></li>
-                                        <li><a href="{{route("cart")}}"> Cart </a></li>
-                                        <li><a href="compare.html"> Compare </a></li>
-                                        <li><a href="{{route("wishlist")}}"> Wishlist </a></li>
-                                        <li><a href="{{route("order-track")}}"> Order Track </a></li>
-                                        <li><a href="{{route("home")}}"> My Account </a></li>
-                                        <li><a href="{{route("faq")}}"> FAQ </a></li>
-                                        <li><a href="error.html"> 404 </a></li>
-                                        <li><a href="{{route("shop-1")}}">Shop Grid </a></li>
-                                        <li><a href="shop-grid-left-sidebar.html"> Shop Grid Left Sidebar </a></li>
-                                        <li><a href="shop-grid-right-sidebar.html"> Shop Grid Right Sidebar </a></li>
-                                        <li><a href="shop-list-left-sidebar.html"> Shop List Left Sidebar </a></li>
-                                        <li><a href="shop-grid-right-sidebar.html"> Shop List Right Sidebar </a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-list"> <a href="#0"> <span>Blogs </span> <span class="menuarrow"> <i
-                                                class="flaticon-next-1"></i> </span> </a>
-                                    <ul class=" dropdown ">
-                                        <li><a href="{{route("blog-many")}}">Blog Single </a></li>
-                                        <li><a href="{{route("blog-one")}}">Blog Details </a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="{{route("contact")}}">Contact </a></li>
-                                <li><a href="{{route("login")}}">Login </a></li>
-                                <li><a href="{{route("register")}}">Register </a></li>
-                            </ul>
+<!-- header-default start -->
+<header class="header-style-3">
+
+    <div class="menubox">
+        <div class="container-fluid">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+
+
+            <div class="d-lg-block d-none">
+                <div class="row g-0 position-relative">
+                    <div class="col-lg-3 d-flex align-items-center justify-content-center border-rit ">
+                        <div class="logo"><a href="{{route("welcome")}}"> <img
+                                    src="{{asset("assets/images/logo/logo.png")}} " alt=""> </a>
                         </div>
                     </div>
-                </div>
-                <div class="d-lg-block d-none">
-                    <div class="row g-0 position-relative">
-                        <div class="col-lg-3 d-flex align-items-center justify-content-center border-rit ">
-                            <div class="logo"> <a href="{{route("welcome")}}"> <img src="{{asset("assets/images/logo/logo.png")}} " alt=""> </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 g-0 p-0">
-                            <div class="row g-0 holder">
-                                <div class="col-12">
-                                    <div class="some-info">
-                                        <p class="d-flex align-items-center"> <span class="icon"> <i
-                                                    class="flaticon-power"></i> </span> Welcome to Karte Online Shop</p>
-                                        <div class="right d-flex align-items-center ">
-                                            <div class="language currency"> <select>
-                                                    <option>USD</option>
-                                                    <option value="1">INR</option>
-                                                    <option value="2">BDT</option>
-                                                </select> </div>
-                                            <div class="language two"> <select>
-                                                    <option>ENGLISH </option>
-                                                    <option value="1">GERMAN</option>
-                                                    <option value="4">FRENCH</option>
-                                                </select> </div> <a href="{{route("login")}}"> </a>
-                                            @guest
-                                                @if (Route::has('login'))
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                                    </li>
-                                                @endif
-
-                                                @if (Route::has('register'))
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                                    </li>
-                                                @endif
-                                            @else
-                                                <li class="nav-item dropdown">
-                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                        {{ Auth::user()->name }}
-                                                    </a>
-
-                                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                            {{ __('Logout') }}
-                                                        </a>
-
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                            @csrf
-                                                        </form>
-                                                    </div>
-                                                </li>
-                                            @endguest
+                    <div class="col-lg-9 g-0 p-0">
+                        <div class="row g-0 holder">
+                            <div class="col-12">
+                                <div class="some-info">
+                                    <p class="d-flex align-items-center"> <span class="icon"> <i
+                                                class="flaticon-power"></i> </span> Welcome to stas Online Shop</p>
+                                    <div class="right d-flex align-items-center ">
+                                        <div class="language currency"><select>
+                                                <option>USD</option>
+                                                <option value="1">INR</option>
+                                                <option value="2">BDT</option>
+                                            </select>
                                         </div>
+                                        <div class="language two"><select>
+                                                <option>ENGLISH</option>
+                                                <option value="1">GERMAN</option>
+                                                <option value="4">FRENCH</option>
+                                            </select>
+                                        </div>
+                                        <a href="{{route("login")}}"> </a>
+                                        @csrf
+                                        @guest
+                                            @if (Route::has('login'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link"
+                                                       href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                </li>
+                                            @endif
+
+                                            @if (Route::has('register'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link"
+                                                       href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                </li>
+                                            @endif
+                                        @else
+                                            <li class="nav-item dropdown">
+                                                <a class="" href="{{route("admin.dashboard")}}"
+                                                   role="button" aria-haspopup="true"
+                                                   aria-expanded="false">
+                                                    {{ Auth::user()->name }}
+                                                </a>
+
+
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                      class="d-none">
+                                                    @csrf
+                                                </form>
+
+                                            </li>
+                                        @endguest
                                     </div>
                                 </div>
                             </div>
-                            <div class="border-one"> </div>
-                            <div class="row g-0 holder">
-                                <div class="col-12">
-                                    <div class="mega-menu-default mega-menu d-lg-block d-none">
-                                        <div class=" d-flex align-items-center justify-content-between ">
-                                            <nav>
-                                                <ul
-                                                    class="page-dropdown-menu d-flex align-items-center justify-content-center">
-                                                    <li class="dropdown-list"> <a href="#0"> <span>Home</span> <span
-                                                                class="menuarrow"> <i class="flaticon-down-arrow"></i>
+                        </div>
+                        <div class="border-one"></div>
+                        <div class="row g-0 holder">
+                            <div class="col-12">
+                                <div class="mega-menu-default mega-menu d-lg-block d-none">
+                                    <div class=" d-flex align-items-center justify-content-between ">
+                                        <nav>
+                                            <ul
+                                                class="page-dropdown-menu d-flex align-items-center justify-content-center">
+                                                <li class="dropdown-list"><a href="{{route("welcome")}}">
+                                                        <span>Home</span> <span
+                                                            class="menuarrow"> <i class=""></i>
                                                             </span> </a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="{{route("welcome")}}">Home Page 01 <sup
-                                                                        class="info three">Popular</sup></a> </li>
 
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-list"> <a href="#0"> <span>Shop </span> <span
-                                                                class="menuarrow"> <i class="flaticon-down-arrow"></i>
+                                                </li>
+                                                <li class="dropdown-list"><a href="{{route("guest.index")}}">
+                                                        <span>Shop </span> <span
+                                                            class="menuarrow"> <i class=""></i>
                                                             </span> </a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="{{route("shop-1")}}">Shop Grid</a></li>
 
-                                                            <li class="submenu-parent"> <a href="#0"> <span>Shop Details
-                                                                        Style
-                                                                    </span> <span class="menuarrow"> <i
-                                                                            class="flaticon-next-1"></i>
-                                                                    </span> </a>
-                                                                <ul class="submenu">
-                                                                    <li><a href="{{route("shop-one")}}">Shop Details Style
-                                                                            01</a></li>
-                                                                    <li><a href="{{route("shop-one")}}">Shop Details Style
-                                                                            02</a></li>
-                                                                    <li><a href="{{route("shop-one")}}">Shop Details Style
-                                                                            03</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-list megamenu "> <a href="#0"> <span>Features
+                                                </li>
+                                                <li class="dropdown-list megamenu "><a href="#0"> <span>Features
                                                             </span> <span class="menuarrow"> <i
-                                                                    class="flaticon-down-arrow"></i> </span> </a>
-                                                        <div class="dropdown megamenu-dropdown">
-                                                            <div class="row g-0">
-                                                                <div class="col-xl-6 col-lg-7 megamenu-padding-one">
-                                                                    <div class="row g-0">
-                                                                        <div class="col-lg-4">
-                                                                            <div class="megamenu-box one">
-                                                                                <h6>Home Pages</h6>
-                                                                                <ul class="megamenu-list">
-                                                                                    <li><a href="{{route("welcome")}}">Home Page
-                                                                                            01</a></li>
+                                                                class="flaticon-down-arrow"></i> </span> </a>
+                                                    <div class="dropdown megamenu-dropdown">
+                                                        <div class="row g-0">
+                                                            <div class="col-xl-6 col-lg-7 megamenu-padding-one">
+                                                                <div class="row g-0">
+                                                                    <div class="col-lg-4">
+                                                                        <div class="megamenu-box one">
+                                                                            <h6>Home Pages</h6>
+                                                                            <ul class="megamenu-list">
+                                                                                <li><a href="{{route("welcome")}}">Home
+                                                                                        Page
+                                                                                        01</a></li>
 
-                                                                                    <li><a href="{{route("shop-one")}}">Product
-                                                                                            Style
-                                                                                            1 </a> </li>
-                                                                                    <li><a href="{{route("shop-one")}}">Product
-                                                                                            Style
-                                                                                            2 </a> </li>
-                                                                                    <li><a href="{{route("shop-one")}}">Product
-                                                                                            Style
-                                                                                            3 </a> </li>
-                                                                                    <li><a href="{{route("contact")}}">Contact
-                                                                                        </a></li>
-                                                                                    <li><a href="{{route("faq")}}">FAQ</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                            <div class="megamenu-box one">
-                                                                                <h6>Shop Pages</h6>
-                                                                                <ul class="megamenu-list">
-                                                                                    <li><a href="{{route("shop-1")}}">Shop
-                                                                                            Grid </a></li>
+                                                                                <li>
+                                                                                    <a href="{{route("guest.index",1)}}">Product
+                                                                                        Style
+                                                                                        1 </a></li>
 
-                                                                                    <li><a href="{{route("shop-1")}}">Shop 4
-                                                                                            colums</a>
-                                                                                    </li>
-
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                            <div class="megamenu-box four">
-                                                                                <h6>Others Pages</h6>
-                                                                                <ul class="megamenu-list">
-                                                                                    <li><a href="{{route("cart")}}">Cart </a>
-                                                                                    </li>
-                                                                                    <li><a href="compare.html">Compare
-                                                                                        </a></li>
-                                                                                    <li><a href="{{route("wishlist")}}">Wishlist
-                                                                                        </a></li>
-                                                                                    <li><a href="{{route("order-track")}}">Order
-                                                                                            Track </a>
-                                                                                    </li>
-                                                                                    <li><a href="{{route("home")}}">My
-                                                                                            Account </a>
-                                                                                    </li>
-                                                                                    <li><a href="{{route("blog-many")}}">Blog</a>
-                                                                                    </li>
-                                                                                    <li><a href="{{route("blog-one")}}">Blog
-                                                                                            Single</a>
-                                                                                    </li>
-                                                                                    <li><a href="{{route("login")}}">Login</a>
-                                                                                    </li>
-                                                                                    <li><a
-                                                                                            href="{{route("register")}}">Register</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
+                                                                                <li><a href="{{route("contact")}}">Contact
+                                                                                    </a></li>
+                                                                                <li><a href="{{route("faq")}}">FAQ</a>
+                                                                                </li>
+                                                                            </ul>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <div
-                                                                    class="col-xl-6 col-lg-5 megamenu-padding background">
-                                                                    <div class="row g-0">
-                                                                        <div class="col-xl-6 col-lg-5">
-                                                                            <div class="content"> <a
-                                                                                    href="{{route("shop-one")}}"
-                                                                                    class="thumb d-block"> <img
-                                                                                        src="{{asset("assets/images/home-two/products-v5-img21.png")}} "
-                                                                                        alt=""> </a> <a
-                                                                                    href="{{route("shop-one")}}.html"
-                                                                                    class="title d-block">
-                                                                                    <h6> Super Comfort Sofa </h6>
-                                                                                </a> <a href="{{route("shop-one")}}.html"
-                                                                                    class="price">$250.00</a> </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="megamenu-box one">
+                                                                            <h6>Shop Pages</h6>
+                                                                            <ul class="megamenu-list">
+                                                                                <li>
+                                                                                    <a href="{{route("guest.index",1)}}">Shop
+                                                                                        Grid </a></li>
+
+
+                                                                            </ul>
                                                                         </div>
-                                                                        <div class="col-xl-6 col-lg-7">
-                                                                            <div class="offer">
-                                                                                <h6>Discount</h6>
-                                                                                <ul>
-                                                                                    <li><a href="{{route("shop-1")}}">
-                                                                                            <span>%</span> 30%
-                                                                                            Off Everything! </a></li>
-                                                                                    <li><a
-                                                                                            href="shop-grid-left-sidebar.html">
-                                                                                            <span>%</span> Get an Extra
-                                                                                            20% Off
-                                                                                            Sale! Use Code: Sale </a>
-                                                                                    </li>
-                                                                                    <li><a
-                                                                                            href="shop-grid-right-sidebar.html">
-                                                                                            <span>%</span> Flash Sale
-                                                                                            Offers </a>
-                                                                                    </li>
-                                                                                    <li><a href="{{route("shop-1")}}">
-                                                                                            <span>%</span>
-                                                                                            Flash Sale Offers </a> </li>
-                                                                                    <li><a
-                                                                                            href="shop-grid-left-sidebar.html">
-                                                                                            <span>%</span> 30% Off
-                                                                                            Everything! </a>
-                                                                                    </li>
-                                                                                    <li><a
-                                                                                            href="shop-grid-right-sidebar.html">
-                                                                                            <span>%</span> Flash Sale
-                                                                                            Offers </a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="megamenu-box four">
+                                                                            <h6>Others Pages</h6>
+                                                                            <ul class="megamenu-list">
+                                                                                <li>
+                                                                                    <a href="{{route("cart")}}">Cart </a>
+                                                                                </li>
+                                                                                <li><a href="compare.html">Compare
+                                                                                    </a></li>
+                                                                                <li><a href="{{route("wishlist")}}">Wishlist
+                                                                                    </a></li>
+                                                                                <li><a href="{{route("order-track")}}">Order
+                                                                                        Track </a>
+                                                                                </li>
+                                                                                <li><a href="{{route("home")}}">My
+                                                                                        Account </a>
+                                                                                </li>
+                                                                                <li><a href="{{route("blog-many")}}">Blog</a>
+                                                                                </li>
+                                                                                <li><a href="{{route("blog-one")}}">Blog
+                                                                                        Single</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="{{route("login")}}">Login</a>
+                                                                                </li>
+                                                                                <li><a
+                                                                                        href="{{route("register")}}">Register</a>
+                                                                                </li>
+                                                                            </ul>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </li>
-                                                    <li class="dropdown-list"> <a href="#0"> <span>Blogs </span> <span
-                                                                class="menuarrow"> <i class="flaticon-down-arrow"></i>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown-list"><a href="{{route("blog-many")}}">
+                                                        <span>Blogs </span> <span
+                                                            class="menuarrow"> <i class="flaticon-down-arrow"></i>
                                                             </span> </a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="{{route("blog-many")}}">All Blog Posts</a></li>
-                                                            <li><a href="{{route("blog-one")}}">Blog Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-list"> <a href="#0"> <span>Pages </span> <span
-                                                                class="menuarrow"> <i class="flaticon-down-arrow"></i>
-                                                            </span> </a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="{{route("about")}}">About Us </a></li>
-                                                            <li><a href="{{route("contact")}}">Contact</a></li>
-                                                            <li><a href="{{route("faq")}}">FAQ</a></li>
-                                                            <li><a href="{{route("order-track")}}">Order_Track</a></li>
-                                                            <li><a href="{{route("home")}}">My_Account</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="dropdown-list"> <a href="{{route("contact")}}">Contact</a> </li>
-                                                </ul>
-                                            </nav>
-
-
-                                            <div class="right d-flex align-items-center justify-content-end">
-                                                <ul class="main-menu__widge-box d-flex align-items-center ">
-                                                    <li class="d-lg-block d-none"><a href="{{route("home")}}"><i
-                                                                class="flaticon-user"></i> </a></li>
-                                                    <li class="d-lg-block d-none"><a href="{{route("wishlist")}}"
-                                                            class="number"><i class="flaticon-heart"></i> <span
-                                                                class="count">(2)</span> </a> </li>
-                                                    <li class="cartm"> <a href="{{route("cart")}}" class="number cart-icon"> <i
-                                                                class="flaticon-shopping-cart"></i><span
-                                                                class="count">(5)</span> </a> </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <a href="{{route("shop-1")}}" class="offer-link"> Offer </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div class="sticy-header">
-            <div class="mobile-menu d-lg-none d-block">
-                <div class="mobile-menu__menu-top border-bottom-0">
-                    <div class="container">
-                        <div class="row">
-                            <div class="menu-info d-flex justify-content-between align-items-center">
-                                <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                    href="{{route("welcome")}}" class="logo"> <img src="{{asset("assets/images/logo/logo.png")}}" alt=""> </a>
-                                <div class="cart-holder">
-                                    <a href="{{route("cart")}}" class="cart cart-icon position-relative">
-                                        <i class="flaticon-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container position-relative d-lg-block d-none">
-                <div class="d-flex align-items-center justify-content-between"> <a href="{{route("welcome")}}" class="logo me-2">
-                        <img src="{{asset("assets/images/logo/logo.png")}}" alt=""> </a>
-                    <div class="mega-menu-default mega-menu d-lg-block d-none">
-                        <div class="container ">
-                            <div class="row">
-                                <nav>
-                                    <ul
-                                        class="page-dropdown-menu d-flex align-items-center justify-content-center">
-                                        <li class="dropdown-list"> <a href="#0"> <span>Home</span> <span
-                                                    class="menuarrow"> <i class="flaticon-down-arrow"></i>
-                                                </span> </a>
-                                            <ul class="dropdown">
-                                                <li><a href="{{route("welcome")}}">Home Page 01 <sup
-                                                            class="info three">Popular</sup></a> </li>
-                                                <li><a href="index-2.html">Home Page 02 <sup
-                                                            class="info one">Hot</sup></a>
-                                                </li>
-                                                <li><a href="index-3.html">Home Page 03 </a> </li>
-                                                <li><a href="index-4.html">Home Page 04 </a> </li>
-                                                <li><a href="index-5.html">Home Page 05 <sup
-                                                            class="info two">New</sup></a>
-                                                </li>
-                                                <li><a href="index-6.html">Home Page 06 <sup
-                                                            class="info one">New</sup></a>
-                                                </li>
-                                                <li><a href="index-7.html">Home Page 07 <sup
-                                                            class="info three">New</sup></a> </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-list"> <a href="#0"> <span>Shop </span> <span
-                                                    class="menuarrow"> <i class="flaticon-down-arrow"></i>
-                                                </span> </a>
-                                            <ul class="dropdown">
-                                                <li><a href="{{route("shop-1")}}">Shop Grid</a></li>
-                                                <li><a href="shop-grid-left-sidebar.html">Shop Grid Left
-                                                        Sidebar </a>
-                                                </li>
-                                                <li><a href="shop-grid-right-sidebar.html">Shop List Left
-                                                        Sidebar</a>
-                                                </li>
-                                                <li><a href="shop-grid-right-sidebar.html">Shop Grid Right
-                                                        Sidebar </a>
-                                                </li>
-                                                <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                        Sidebar</a>
-                                                </li>
-                                                <li class="submenu-parent"> <a href="#0"> <span>Shop Details
-                                                            Style
-                                                        </span> <span class="menuarrow"> <i
-                                                                class="flaticon-next-1"></i>
-                                                        </span> </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{{route("shop-one")}}">Shop Details Style
-                                                                01</a></li>
-                                                        <li><a href="{{route("shop-one")}}">Shop Details Style
-                                                                02</a></li>
-                                                        <li><a href="{{route("shop-one")}}">Shop Details Style
-                                                                03</a></li>
+                                                    <ul class="dropdown">
+                                                        <li><a href="{{route("blog-many")}}">All Blog Posts</a></li>
+                                                        <li><a href="{{route("blog-one")}}">Blog Details</a></li>
                                                     </ul>
                                                 </li>
+                                                <li class="dropdown-list"><a href="#0"> <span>Pages </span> <span
+                                                            class="menuarrow"> <i class="flaticon-down-arrow"></i>
+                                                            </span> </a>
+                                                    <ul class="dropdown">
+                                                        <li><a href="{{route("about")}}">About Us </a></li>
+                                                        <li><a href="{{route("contact")}}">Contact</a></li>
+                                                        <li><a href="{{route("faq")}}">FAQ</a></li>
+                                                        <li><a href="{{route("order-track")}}">Order_Track</a></li>
+                                                        <li><a href="{{route("home")}}">My_Account</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown-list"><a href="{{route("contact")}}">Contact</a>
+                                                </li>
                                             </ul>
-                                        </li>
-                                        <li class="dropdown-list megamenu "> <a href="#0"> <span>Features
-                                                </span> <span class="menuarrow"> <i
-                                                        class="flaticon-down-arrow"></i> </span> </a>
-                                            <div class="dropdown megamenu-dropdown">
-                                                <div class="row g-0">
-                                                    <div class="col-xl-6 col-lg-7 megamenu-padding-one">
-                                                        <div class="row g-0">
-                                                            <div class="col-lg-4">
-                                                                <div class="megamenu-box one">
-                                                                    <h6>Home Pages</h6>
-                                                                    <ul class="megamenu-list">
-                                                                        <li><a href="{{route("welcome")}}">Home Page
-                                                                                01</a></li>
-                                                                        <li><a href="index-2.html">Home Page
-                                                                                02</a></li>
-                                                                        <li><a href="index-3.html">Home Page
-                                                                                03</a></li>
-                                                                        <li><a href="index-4.html">Home Page
-                                                                                04</a></li>
-                                                                        <li><a href="{{route("shop-one")}}">Product
-                                                                                Style
-                                                                                1 </a> </li>
-                                                                        <li><a href="{{route("shop-one")}}">Product
-                                                                                Style
-                                                                                2 </a> </li>
-                                                                        <li><a href="{{route("shop-one")}}">Product
-                                                                                Style
-                                                                                3 </a> </li>
-                                                                        <li><a href="{{route("contact")}}">Contact
-                                                                            </a></li>
-                                                                        <li><a href="{{route("faq")}}">FAQ</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="megamenu-box one">
-                                                                    <h6>Shop Pages</h6>
-                                                                    <ul class="megamenu-list">
-                                                                        <li><a href="{{route("shop-1")}}">Shop
-                                                                                Grid </a></li>
-                                                                        <li><a
-                                                                                href="shop-list-left-sidebar.html">Shop
-                                                                                list</a> </li>
-                                                                        <li><a
-                                                                                href="shop-grid-right-sidebar.html">Shop
-                                                                                2 colums </a></li>
-                                                                        <li><a
-                                                                                href="shop-grid-left-sidebar.html">Shop
-                                                                                3
-                                                                                colums </a></li>
-                                                                        <li><a href="{{route("shop-1")}}">Shop 4
-                                                                                colums</a>
-                                                                        </li>
-                                                                        <li><a
-                                                                                href="shop-grid-left-sidebar.html">Shop
-                                                                                Grid Left Sidebar </a></li>
-                                                                        <li><a
-                                                                                href="shop-grid-right-sidebar.html">Shop
-                                                                                Grid Right Sidebar</a></li>
-                                                                        <li><a
-                                                                                href="shop-list-left-sidebar.html">Shop
-                                                                                List Left Sidebar</a></li>
-                                                                        <li><a
-                                                                                href="shop-list-right-sidebar.html">Shop
-                                                                                List Right Sidebar</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="megamenu-box four">
-                                                                    <h6>Others Pages</h6>
-                                                                    <ul class="megamenu-list">
-                                                                        <li><a href="{{route("cart")}}">Cart </a>
-                                                                        </li>
-                                                                        <li><a href="compare.html">Compare
-                                                                            </a></li>
-                                                                        <li><a href="{{route("wishlist")}}">Wishlist
-                                                                            </a></li>
-                                                                        <li><a href="{{route("order-track")}}">Order
-                                                                                Track </a>
-                                                                        </li>
-                                                                        <li><a href="{{route("home")}}">My
-                                                                                Account </a>
-                                                                        </li>
-                                                                        <li><a href="{{route("blog-many")}}">Blog</a>
-                                                                        </li>
-                                                                        <li><a href="{{route("blog-one")}}">Blog
-                                                                                Single</a>
-                                                                        </li>
-                                                                        <li><a href="{{route("login")}}">Login</a>
-                                                                        </li>
-                                                                        <li><a
-                                                                                href="{{route("register")}}">Register</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="col-xl-6 col-lg-5 megamenu-padding background">
-                                                        <div class="row g-0">
-                                                            <div class="col-xl-6 col-lg-5">
-                                                                <div class="content"> <a
-                                                                        href="{{route("shop-one")}}"
-                                                                        class="thumb d-block"> <img
-                                                                            src="{{asset("assets/images/home-two/products-v5-img21.png")}} "
-                                                                            alt=""> </a> <a
-                                                                        href="{{route("shop-one")}}"
-                                                                        class="title d-block">
-                                                                        <h6> Super Comfort Sofa </h6>
-                                                                    </a> <a href="{{route("shop-one")}}"
-                                                                        class="price">$250.00</a> </div>
-                                                            </div>
-                                                            <div class="col-xl-6 col-lg-7">
-                                                                <div class="offer">
-                                                                    <h6>Discount</h6>
-                                                                    <ul>
-                                                                        <li><a href="{{route("shop-1")}}">
-                                                                                <span>%</span> 30%
-                                                                                Off Everything! </a></li>
-                                                                        <li><a
-                                                                                href="shop-grid-left-sidebar.html">
-                                                                                <span>%</span> Get an Extra
-                                                                                20% Off
-                                                                                Sale! Use Code: Sale </a>
-                                                                        </li>
-                                                                        <li><a
-                                                                                href="shop-grid-right-sidebar.html">
-                                                                                <span>%</span> Flash Sale
-                                                                                Offers </a>
-                                                                        </li>
-                                                                        <li><a href="{{route("shop-1")}}">
-                                                                                <span>%</span>
-                                                                                Flash Sale Offers </a> </li>
-                                                                        <li><a
-                                                                                href="shop-grid-left-sidebar.html">
-                                                                                <span>%</span> 30% Off
-                                                                                Everything! </a>
-                                                                        </li>
-                                                                        <li><a
-                                                                                href="shop-grid-right-sidebar.html">
-                                                                                <span>%</span> Flash Sale
-                                                                                Offers </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="dropdown-list"> <a href="#0"> <span>Blogs </span> <span
-                                                    class="menuarrow"> <i class="flaticon-down-arrow"></i>
-                                                </span> </a>
-                                            <ul class="dropdown">
-                                                <li><a href="{{route("blog-many")}}">All Blog Posts</a></li>
-                                                <li><a href="{{route("blog-one")}}">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-list"> <a href="#0"> <span>Pages </span> <span
-                                                    class="menuarrow"> <i class="flaticon-down-arrow"></i>
-                                                </span> </a>
-                                            <ul class="dropdown">
-                                                <li><a href="{{route("about")}}">About Us </a></li>
-                                                <li><a href="{{route("contact")}}">Contact</a></li>
-                                                <li><a href="{{route("faq")}}">FAQ</a></li>
-                                                <li><a href="{{route("order-track")}}">Order_Track</a></li>
-                                                <li><a href="{{route("home")}}">My_Account</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-list"> <a href="{{route("contact")}}">Contact</a> </li>
-                                    </ul>
-                                </nav>
+                                        </nav>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sidebar-content-closer"></div>
-        <div class="sidebar-content">
-            <div class="sidebar-widget-container">
-                <div class="widget-heading d-flex justify-content-end align-content-center"> <span
-                        class="close-side-widget">X</span> </div>
-                <div class="sidebar-textwidget">
-                    <div class="sidebar-info-contents">
-                        <div class="content-inner">
-                            <div class="logo"> <a href="{{route("welcome")}}"><img src="{{asset("assets/images/logo/logo-2.png")}} " alt=""></a>
-                            </div>
-                            <div class="content-box">
-                                <h4>About Us</h4>
-                                <div class="inner-text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+
+                                        <div class="right d-flex align-items-center justify-content-end">
+                                            <ul class="main-menu__widge-box d-flex align-items-center ">
+                                                <li class="d-lg-block d-none"><a href="{{route("home")}}"><i
+                                                            class="flaticon-user"></i> </a></li>
+                                                <li class="d-lg-block d-none"><a href="{{route("wishlist")}}"
+                                                                                 class="number"><i
+                                                            class="flaticon-heart"></i> <span
+                                                            class="count">(2)</span> </a></li>
+                                                <li class="cartm"><a href="{{route("cart")}}" class="number cart-icon">
+                                                        <i
+                                                            class="flaticon-shopping-cart"></i><span
+                                                            class="count">(5)</span> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form_inner">
-                                <h4>Support</h4>
-                                <form action="{{route("welcome")}}" method="post">
-                                    <div class="form-group mt-4"> <input type="text" name="name" placeholder="Name"
-                                            required=""> </div>
-                                    <div class="form-group mt-4"> <input type="email" name="email" placeholder="Email"
-                                            required=""> </div>
-                                    <div class="form-group mt-4"> <textarea name="message"
-                                            placeholder="Message..."></textarea> </div>
-                                    <div class="form-group message-btn mt-4"> <button type="submit"
-                                            class="btn--secondary"> <span class="txt">Submit Now</span> </button> </div>
-                                </form>
-                            </div>
-                            <div class="sidebar-contact-info">
-                                <h4>Contact Info</h4>
-                                <ul>
-                                    <li> <span class="flaticon-pin-1"></span> New York, United States </li>
-                                    <li> <span class="flaticon-telephone"></span> <a href="tel:+44203700001">+44 123 456
-                                            789</a> </li>
-                                    <li> <span class="flaticon-mail"></span> <a
-                                            href="mailto:info@example.com">info@example.com</a> </li>
-                                </ul>
-                            </div>
-                            <div class="thm-medio-boxx1">
-                                <ul class="social-box">
-                                    <li class="facebook"> <a href="https://www.facebook.com/" target="_blank"><i
-                                                class="flaticon-facebook-app-symbol"></i></a> </li>
-                                    <li class="twitter"> <a href="https://twitter.com/" target="_blank"><i
-                                                class="flaticon-twitter"></i></a> </li>
-                                    <li class="instagram"> <a href="https://www.instagram.com/" target="_blank"><i
-                                                class="flaticon-instagram"></i></a> </li>
-                                    <li class="youtube"> <a href="https://www.youtube.com/" target="_blank"><i
-                                                class="flaticon-youtube"></i></a> </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    </header>
-
+</header>
 
 
 @yield("content")
 
-    <footer class="footer-default footer-3 ">
-        <div class="footer-default__shap_1 position-absolute "> <img src="{{asset("assets/images/shape/footer-shape-1.png")}} "
-                alt=""> </div>
-        <!--Start Footer-->
-        <div class="footer-default__main-footer position-relative">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
-                        <div class="footer-default__single-box">
-                            <div class="company-info">
-                                <div class="footer-title">
-                                    <h4> Office</h4>
-                                </div>
-                                <div class="text1">
-                                    <p>29 Holles Place, Dublin 2 D02 YY46</p>
-                                </div>
-                                <div class="text2">
-                                    <p>68 Jay Street, Suite 902 New Side <br> Brooklyn, NY 11201</p>
-                                </div>
-                                <div class="text3">
-                                    <p>New York, United States</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
-                        <div class="footer-default__single-box">
+<footer class="footer-default footer-3 ">
+    <div class="footer-default__shap_1 position-absolute "><img
+            src="{{asset("assets/images/shape/footer-shape-1.png")}} "
+            alt=""></div>
+    <!--Start Footer-->
+    <div class="footer-default__main-footer position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="footer-default__single-box">
+                        <div class="company-info">
                             <div class="footer-title">
-                                <h4> Useful Links </h4>
+                                <h4> Office</h4>
                             </div>
-                            <ul class="footer-links">
-                                <li><a href="{{route("home")}}">Account</a></li>
-                                <li><a href="{{route("login")}}">Sign In</a></li>
-                                <li><a href="{{route("cart")}}">View Cart</a></li>
-                                <li><a href="{{route("wishlist")}}">My WishList</a></li>
-                                <li><a href="compare.html">Compare Products</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
-                        <div class="footer-default__single-box">
-                            <div class="footer-title">
-                                <h4> Information </h4>
+                            <div class="text1">
+                                <p>29 Holles Place, Dublin 2 D02 YY46</p>
                             </div>
-                            <ul class="footer-links">
-                                <li><a href="{{route("about")}}">About us</a></li>
-                                <li><a href="{{route("contact")}}">Contact Us </a></li>
-                                <li><a href="{{route("faq")}}">Faq</a></li>
-                                <li><a href="{{route("blog-many")}}">Latest Posts</a></li>
-                                <li><a href="{{route("order-track")}}">Order Track</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
-                        <div class="footer-default__single-box">
-                            <div class="footer-title">
-                                <h4> Newsletter </h4>
+                            <div class="text2">
+                                <p>68 Jay Street, Suite 902 New Side <br> Brooklyn, NY 11201</p>
                             </div>
-                            <div class="footer-newsletter">
-                                <p class="text">Enter your email to receive our latest updates about our products &
-                                    promotions. </p>
-                                <form action="#0" class="footer-default__subscrib-form">
-                                    <div class="footer-input-box"> <input type="email" placeholder="Email address"
-                                            name="email"> <button type="submit" class="subscribe_btn"> Subscribe
-                                        </button> </div>
-                                </form>
-                                <div class="newsletter-bottom d-flex align-items-center">
-                                    <div class="footer-title-box">
-                                        <p>Follow Us:</p>
-                                    </div>
-                                    <div class="footer__medio-boxx  medio-boxx  d-flex align-items-center">
-                                        <ul>
-                                            <li><a href="https://www.facebook.com/" target="_blank" class="active"><i
-                                                        class="flaticon-facebook-app-symbol"></i></a></li>
-                                            <li><a href="https://www.youtube.com/" target="_blank"><i
-                                                        class="flaticon-youtube"></i></a></li>
-                                            <li><a href="https://twitter.com/"><i class="flaticon-twitter"
-                                                        target="_blank"></i></a></li>
-                                            <li><a href="https://www.instagram.com/"><i class="flaticon-instagram"
-                                                        target="_blank"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="text3">
+                                <p>New York, United States</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div> <!-- footer-bottom Footer-->
-        <div class="footer_bottom position-relative">
-            <div class="container">
-                <div class="footer_bottom_content">
-                    <div class="copyright wow fadeInUp animated">
-                        <p>© 2022 <a href="{{route("welcome")}}">Karte.</a> All Rights Reserved.</p>
+                <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="footer-default__single-box">
+                        <div class="footer-title">
+                            <h4> Useful Links </h4>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="{{route("home")}}">Account</a></li>
+                            <li><a href="{{route("login")}}">Sign In</a></li>
+                            <li><a href="{{route("cart")}}">View Cart</a></li>
+                            <li><a href="{{route("wishlist")}}">My WishList</a></li>
+                            <li><a href="compare.html">Compare Products</a></li>
+                        </ul>
                     </div>
-                    <div class="footer-payment wow fadeInUp animated">
-                        <a href="#0"> <img src="{{asset("assets/images/home-four/method-1.jpg")}} " alt="payment"> </a>
-                        <a href="#0"> <img src="{{asset("assets/images/home-four/method-2.jpg")}}" alt="payment"> </a>
-                        <a href="#0"> <img src="{{asset("assets/images/home-four/method-3.jpg")}}" alt="payment"> </a>
-                        <a href="#0"> <img src="{{asset("assets/images/home-four/method-4.jpg")}}" alt="payment"> </a>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="footer-default__single-box">
+                        <div class="footer-title">
+                            <h4> Information </h4>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="{{route("about")}}">About us</a></li>
+                            <li><a href="{{route("contact")}}">Contact Us </a></li>
+                            <li><a href="{{route("faq")}}">Faq</a></li>
+                            <li><a href="{{route("blog-many")}}">Latest Posts</a></li>
+                            <li><a href="{{route("order-track")}}">Order Track</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
+                    <div class="footer-default__single-box">
+                        <div class="footer-title">
+                            <h4> Newsletter </h4>
+                        </div>
+                        <div class="footer-newsletter">
+                            <p class="text">Enter your email to receive our latest updates about our products &
+                                promotions. </p>
+                            <form action="#0" class="footer-default__subscrib-form">
+                                <div class="footer-input-box"><input type="email" placeholder="Email address"
+                                                                     name="email">
+                                    <button type="submit" class="subscribe_btn"> Subscribe
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="newsletter-bottom d-flex align-items-center">
+                                <div class="footer-title-box">
+                                    <p>Follow Us:</p>
+                                </div>
+                                <div class="footer__medio-boxx  medio-boxx  d-flex align-items-center">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/" target="_blank" class="active"><i
+                                                    class="flaticon-facebook-app-symbol"></i></a></li>
+                                        <li><a href="https://www.youtube.com/" target="_blank"><i
+                                                    class="flaticon-youtube"></i></a></li>
+                                        <li><a href="https://twitter.com/"><i class="flaticon-twitter"
+                                                                              target="_blank"></i></a></li>
+                                        <li><a href="https://www.instagram.com/"><i class="flaticon-instagram"
+                                                                                    target="_blank"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!--==== Js Scripts Start ====-->
-    <!-- Jquery v3.6.0 Js -->
-    <script src="{{ asset("assets/js/jqurey.v3.6.0.min.js")}}"></script> <!-- Popper v2.9.3 Js -->
-    <script src="{{ asset("assets/js/popper.v2.9.3.min.js")}}"></script> <!-- Bootstrap v5.1.1 js -->
-    <script src="{{ asset("assets/js/bootstrap.v5.1.1.min.js")}}"></script> <!-- jquery ui js -->
-    <script src="{{ asset("assets/js/plugin/jquery-ui.min.js")}}"></script> <!-- Parallax js -->
-    <script src="{{ asset("assets/js/plugin/jarallax.min.js")}}"></script> <!-- Isotope js -->
-    <script src="{{ asset("assets/js/plugin/isotope.js")}}j"></script> <!-- Slick Slider Js -->
-    <script src="{{ asset("assets/js/plugin/slick.min.js")}}"></script> <!-- magnific-popup v2.3.4 Js -->
-    <script src="{{ asset("assets/js/plugin/jquery.magnific-popup.min.js")}}"></script> <!-- Tweenmax v2.3.4 Js -->
-    <script src="{{ asset("assets/js/plugin/tweenMax.min.js")}}"></script> <!-- Nice Select Js -->
-    <script src="{{ asset("assets/js/plugin/nice-select.v1.0.min.js")}}"></script> <!-- Wow js -->
-    <script src="{{ asset("assets/js/plugin/wow.v1.3.0.min.js")}}"></script> <!-- Wow js -->
-    <script src="{{ asset("assets/js/plugin/jquery.countdown.min.js")}}"></script> <!-- Main js -->
-    <script src="{{ asset("assets/js/main.js")}}"></script>
-    <!--==== Js Scripts End ====-->
+    </div> <!-- footer-bottom Footer-->
+    <div class="footer_bottom position-relative">
+        <div class="container">
+            <div class="footer_bottom_content">
+                <div class="copyright wow fadeInUp animated">
+                    <p>© 2022 <a href="{{route("welcome")}}">Karte.</a> All Rights Reserved.</p>
+                </div>
+                <div class="footer-payment wow fadeInUp animated">
+                    <a href="#0"> <img src="{{asset("assets/images/home-four/method-1.jpg")}} " alt="payment"> </a>
+                    <a href="#0"> <img src="{{asset("assets/images/home-four/method-2.jpg")}}" alt="payment"> </a>
+                    <a href="#0"> <img src="{{asset("assets/images/home-four/method-3.jpg")}}" alt="payment"> </a>
+                    <a href="#0"> <img src="{{asset("assets/images/home-four/method-4.jpg")}}" alt="payment"> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--==== Js Scripts Start ====-->
+<!-- Jquery v3.6.0 Js -->
+<script src="{{ asset("assets/js/jqurey.v3.6.0.min.js")}}"></script> <!-- Popper v2.9.3 Js -->
+<script src="{{ asset("assets/js/popper.v2.9.3.min.js")}}"></script> <!-- Bootstrap v5.1.1 js -->
+<script src="{{ asset("assets/js/bootstrap.v5.1.1.min.js")}}"></script> <!-- jquery ui js -->
+<script src="{{ asset("assets/js/plugin/jquery-ui.min.js")}}"></script> <!-- Parallax js -->
+<script src="{{ asset("assets/js/plugin/jarallax.min.js")}}"></script> <!-- Isotope js -->
+<script src="{{ asset("assets/js/plugin/isotope.js")}}"></script> <!-- Slick Slider Js -->
+<script src="{{ asset("assets/js/plugin/slick.min.js")}}"></script> <!-- magnific-popup v2.3.4 Js -->
+<script src="{{ asset("assets/js/plugin/jquery.magnific-popup.min.js")}}"></script> <!-- Tweenmax v2.3.4 Js -->
+<script src="{{ asset("assets/js/plugin/tweenMax.min.js")}}"></script> <!-- Nice Select Js -->
+<script src="{{ asset("assets/js/plugin/nice-select.v1.0.min.js")}}"></script> <!-- Wow js -->
+<script src="{{ asset("assets/js/plugin/wow.v1.3.0.min.js")}}"></script> <!-- Wow js -->
+<script src="{{ asset("assets/js/plugin/jquery.countdown.min.js")}}"></script> <!-- Main js -->
+<script src="{{ asset("assets/js/main.js")}}"></script>
+<!--==== Js Scripts End ====-->
+
+<script src="{{ asset("build/assets/app.d6357cc5.js")}}"></script>
+
 </body>
 
 </html>

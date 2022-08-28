@@ -126,12 +126,15 @@
                                 </div>
                                 <p class="people-searce"> There are <span>50</span> peoples are cureently looking at
                                     this product </p>
-                                <div class="shop-details-top-cart-box-btn">
-                                    <button class="btn--primary style2 " type="submit">Add to Cart</button>
+
+                                <div class="shop-details-top-buy-now-btn"><a href="{{route("admin.products.edit",$product)}}" class="btn--primary">
+                                        Edit</a>
                                 </div>
-                                <div class="shop-details-top-buy-now-btn"><a href="{{route("cart")}}"
-                                                                             class="btn--primary">Buy
-                                        It Now</a></div>
+                                    <form action="{{route("admin.products.destroy",$product)}}" method="POST" >
+                                    @csrf
+                                    @method("delete")
+                                <div class="shop-details-top-buy-now-btn"> <button type="submit" class="btn--primary style2">{{ __('Delete1') }} </button></div>
+                                </form>
                                 <div class="shop-details-top-social-box">
                                     <p>Share:</p>
                                     <ul class="ps-1 social_link d-flex align-items-center">
@@ -488,182 +491,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section> <!-- productdrescription-tab End -->
-        <!--Start Video One-->
-        <section class="video-one pt-120 pb-120 overflow-hidden ">
-            <div class="container">
-                <div class="row align-items-center justify-content-between flex-lg-row flex-column-reverse mt--30">
-                    <div class="col-lg-6 mt-30 wow fadeInLeft animated">
-                        <!--Start Video One Img-->
-                        <div class="video-one__img">
-                            <div class="video-one__img-inner"><img src="{{asset("assets/images/home-two/video-v1-img1.jpg")}}"
-                                                                   alt="">
-                                <div class="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                    <a class="video-popup" title="Video Gallery"
-                                       href="ttps://www.youtube.com/watch?v=4DCTTrGjGU4"> <i class="flaticon-play"></i>
-                                    </a></div>
-                            </div>
-                        </div>
-                        <!--End Video One Img-->
-                    </div>
-                    <div class="col-lg-6 mt-30">
-                        <!--Start Video One Content-->
-                        <div class="video-one__content">
-                            <div class="section-header wow fadeInUp animated">
-                                <p>Our Core Values</p>
-                                <h2 class="t40">Live Peace, Smooth Comfort Safety Everything</h2>
-                            </div>
-                            <div class="video-one__content-list pt-2 wow fadeInUp animated">
-                                <ul>
-                                    <li> Super Easy To Maintenance Everything</li>
-                                    <li> Luxurious Living Feeling For All</li>
-                                    <li> Extra Comfort For Body</li>
-                                    <li> More Effective Lifestyle For All</li>
-                                </ul>
-                            </div>
-                            <div class="btn-box"><a href="shop-grid.html" class="btn--primary wow fadeInUp animated">Start
-                                    Shopping</a></div>
-                        </div>
-                        <!--End Video One Content-->
-                    </div>
-                </div>
+
+
+
             </div>
         </section>
-        <!--End Video One-->
-        <!-- Categories tab Start -->
-        <section class="recent-products pt-120 pb-120 overflow-hidden wow fadeInUp">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-12 wow fadeInUp animated">
-                        <div class="section-head text-center">
-                            <h2>Related Products </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-30 wow fadeInUp animated">
-                    <div class="catagory-slider">
-                        <div class="product-grid-two mt-30 ">
-                            <div class="product-grid-two__img"><a href="shop-details-2.html" class="d-block"> <img
-                                        src="{{asset("assets/images/home-two/products-v5-img9.jpg")}} " alt=""> </a>
-                                <div class="products-grid-one__badge-box"><span class="badge discount">Best</span>
-                                </div>
-                                <div class="product-grid-two__overlay-box">
-                                    <div class="title">
-                                        <h6><a href="cart.html">Add To Cart</a></h6>
-                                    </div>
-                                    <div class="icon">
-                                        <ul>
-                                            <li><a href="#popupl" class="popup_link"><i class="flaticon-eye"></i></a>
-                                            </li>
-                                            <li><a href="wishlist.html"><i class="flaticon-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="popupl" class="product-gird__quick-view-popup mfp-hide">
-                                <div class="container">
-                                    <div class="row justify-content-between align-items-center">
-                                        <div class="col-lg-6">
-                                            <div class="quick-view__left-content">
-                                                <div class="tabs">
-                                                    <div class="popup-product-thumb-box">
-                                                        <ul>
-                                                            <li class="tab-nav popup-product-thumb"><a
-                                                                    href="#tab7111111l"> <img
-                                                                        src="assets/images/home-two/products-v5-img1.jpg"
-                                                                        alt=""> </a></li>
-                                                            <li class="tab-nav popup-product-thumb "><a
-                                                                    href="#tab8111111l"> <img
-                                                                        src="assets/images/home-two/products-v5-img2.jpg"
-                                                                        alt=""> </a></li>
-                                                            <li class="tab-nav popup-product-thumb "><a
-                                                                    href="#tab9111111l"> <img
-                                                                        src="assets/images/home-two/products-v5-img3.jpg"
-                                                                        alt=""> </a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="popup-product-main-image-box">
-                                                        <div id="tab7111111l" class="tab-item popup-product-image">
-                                                            <div class="popup-product-single-image"><img
-                                                                    src="assets/images/home-two/products-v5-img1.jpg"
-                                                                    alt=""></div>
-                                                        </div>
-                                                        <div id="tab8111111l" class="tab-item popup-product-image">
-                                                            <div class="popup-product-single-image"><img
-                                                                    src="assets/images/home-two/products-v5-img2.jpg"
-                                                                    alt=""></div>
-                                                        </div>
-                                                        <div id="tab9111111l" class="tab-item popup-product-image">
-                                                            <div class="popup-product-single-image"><img
-                                                                    src="assets/images/home-two/products-v5-img3.jpg"
-                                                                    alt=""></div>
-                                                        </div>
-                                                        <button class="prev"><i class="flaticon-back"></i>
-                                                        </button>
-                                                        <button class="next"><i class="flaticon-next"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="popup-right-content">
-                                                <h3>Vintage Table</h3>
-                                                <div class="ratting"><i class="flaticon-star"></i> <i
-                                                        class="flaticon-star"></i> <i class="flaticon-star"></i> <i
-                                                        class="flaticon-star"></i> <i class="flaticon-star"></i>
-                                                    <span>(123)</span></div>
-                                                <p class="text"> Wooden Tables to Brighten Your Dining Room </p>
-                                                <div class="price">
-                                                    <h2> $50 USD
-                                                        <del> $105 USD</del>
-                                                    </h2>
-                                                    <h6> In stuck</h6>
-                                                </div>
-                                                <div class="color-varient"><a href="#0" class="color-name pink">
-                                                        <span>Pink</span> </a> <a href="#0" class="color-name red">
-                                                        <span>Red</span> </a> <a href="#0"
-                                                                                 class="color-name yellow"><span>Yellow</span>
-                                                    </a> <a href="#0" class="color-name blue"> <span>Blue</span> </a> <a
-                                                        href="#0" class="color-name black"> <span>Black</span> </a>
-                                                </div>
-                                                <div class="add-product">
-                                                    <h6>Qty:</h6>
-                                                    <div class="button-group">
-                                                        <div class="qtySelector text-center"> <span class="decreaseQty"><i
-                                                                    class="flaticon-minus"></i>
-                                                            </span> <input type="number" class="qtyValue" value="1">
-                                                            <span class="increaseQty"> <i class="flaticon-plus"></i>
-                                                            </span></div>
-                                                        <button class="btn--primary "> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="payment-method"><a href="#0"> <img
-                                                            src="assets/images/payment_method/method_1.png" alt=""> </a>
-                                                    <a href="#0"> <img src="assets/images/payment_method/method_2.png"
-                                                                       alt=""> </a> <a href="#0"> <img
-                                                            src="assets/images/payment_method/method_3.png" alt=""> </a>
-                                                    <a href="#0"> <img src="assets/images/payment_method/method_4.png"
-                                                                       alt=""> </a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-grid-two-content text-center"><span>Modern</span>
-                                <h5><a href="shop-details-2.html">Vintage Table</a></h5>
-                                <p>
-                                    <del>$200</del>
-                                    $159.00
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> <!-- Categories tab End -->
+
     </main>
 
 @endsection

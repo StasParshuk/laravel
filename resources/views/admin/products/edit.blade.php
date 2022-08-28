@@ -11,8 +11,9 @@
                         <div class="top-title text-center ">
                             <h2>create product</h2>
                         </div>
-                        <form class="common-form " method="POST" enctype="multipart/form-data" action="{{ route('admin.products.store') }}">
+                        <form class="common-form " method="POST" action="{{ route('admin.products.update',$product->id) }}">
                             @csrf
+                            @method("patch")
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -28,25 +29,26 @@
                             <div class="form-group">
                                 <input type="text" placeholder="title"
                                        class="form-control" name="title"
-                                       value="{{old("title")}}" required autofocus>
+                                       value="{{$product->title}}" required autofocus>
                             </div>
 
                             <label for="title"
                                    class="col-md-4   align-content-center d-flex">{{ __('Category') }}</label>
                             <div class="form-group">
-                                <select class="form-select" type=""  aria-label="Default select example" name="category_id">
+                                <select class="form-select" type="" aria-label="Default select example" name="category_id">
                                     <option selected>Open this select menu</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
+
                             <label for="description"
                                    class="col-md-4   align-content-center d-flex">{{ __('Description') }}</label>
                             <div class="form-group">
-                                <input type="text" placeholder="description"
+                                <textarea type="text" placeholder="description"
                                        class="form-control" name="description"
-                                       value="{{old("description")}}" required autofocus>
+                                        required autofocus> {{$product->description}}</textarea>
                             </div>
 
                             <label for="short_description"
@@ -54,7 +56,7 @@
                             <div class="form-group">
                                 <input type="text" placeholder="short_description"
                                        class="form-control" name="short_description"
-                                       value="{{old("short_description")}}" required autofocus>
+                                       value="{{$product->short_description}}" required autofocus>
                             </div>
 
                             <label for="SKU"
@@ -62,7 +64,7 @@
                             <div class="form-group">
                                 <input type="text" placeholder="SKU"
                                        class="form-control" name="SKU"
-                                       value="{{old("SKU")}}" required autofocus>
+                                       value="{{$product->SKU}}" required autofocus>
                             </div>
 
                             <label for="price"
@@ -70,7 +72,7 @@
                             <div class="form-group">
                                 <input type="number" placeholder="price"
                                        class="form-control" name="price"
-                                       value="{{old("price")}}" required autofocus>
+                                       value="{{$product->price}}" required autofocus>
                             </div>
 
                             <label for="discount"
@@ -78,7 +80,7 @@
                             <div class="form-group">
                                 <input type="number" placeholder="discount"
                                        class="form-control" name="discount"
-                                       value="{{old("discount")}}" required autofocus max="100">
+                                       value="{{$product->discount}}" required autofocus max="100">
                             </div>
 
                             <label for="in_stock"
@@ -86,23 +88,25 @@
                             <div class="form-group">
                                 <input type="number" placeholder="in_stock"
                                        class="form-control" name="in_stock"
-                                       value="{{old("in_stock")}}" required autofocus min="0">
+                                       value="{{$product->in_stock}}" required autofocus min="0">
                             </div>
 
                             <label for="thumbnail"
                                    class="col-md-4   align-content-center d-flex">{{ __('thumbnail') }}</label>
-                            <div class="mb-3">
-                                <input type="file" placeholder="thumbnail"
+                            <div class="form-group">
+                                <input type="text" placeholder="thumbnail"
                                        class="form-control" name="thumbnail"
-                                       value="{{old("thumbnail")}}" required autofocus>
+                                       value="{{$product->thumbnail}}" required autofocus>
                             </div>
 
 
-                            <button type="submit" class="btn--primary style2">{{ __('Create') }} </button>
+                            <button type="submit" class="btn--primary style2">{{ __('edit') }} </button>
                         </form>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </section>
 

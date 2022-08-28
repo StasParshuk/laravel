@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     <main class="overflow-hidden ">
         <!--Start Breadcrumb Style2-->
         <section class="breadcrumb-area" style="background-image: url(assets/images/inner-pages/breadcum-bg.png);">
