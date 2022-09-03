@@ -15,6 +15,7 @@ class CategoryController extends Controller
 
     public function index()
     {
+
         $products = Category::paginate(12);
 
         return view("admin.categories.index", compact('products'));
@@ -29,12 +30,10 @@ class CategoryController extends Controller
     public function store(CreateCategoryRequest $request)
     {
 
-            $data = request()->validate($request->rules());
-           $product = Category::create($data);
+        $data = request()->validate($request->rules());
+        $product = Category::create($data);
 
-            return redirect()->route("admin.category.index")->with('status', "The category #{$product->id} was successfully created!");
-
-
+        return redirect()->route("admin.category.index")->with('status', "The category #{$product->id} was successfully created!");
 
 
     }
@@ -63,5 +62,6 @@ class CategoryController extends Controller
 
         return view('admin.categories.show', compact(["product"]));
     }
+
 
 }

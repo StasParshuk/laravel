@@ -9,9 +9,9 @@
                     <div class="login-register-form"
                          style="background-image: url('{{asset( "assets/images/inner-pages/login-bg.png")}}');">
                         <div class="top-title text-center ">
-                            <h2>create product</h2>
+                            <h2>Edit product</h2>
                         </div>
-                        <form class="common-form " method="POST" action="{{ route('admin.products.update',$product->id) }}">
+                        <form class="common-form " method="POST" enctype="multipart/form-data" action="{{ route('admin.products.update',$product->id) }}">
                             @csrf
                             @method("patch")
                             @if ($errors->any())
@@ -31,12 +31,11 @@
                                        class="form-control" name="title"
                                        value="{{$product->title}}" required autofocus>
                             </div>
-
                             <label for="title"
                                    class="col-md-4   align-content-center d-flex">{{ __('Category') }}</label>
                             <div class="form-group">
-                                <select class="form-select" type="" aria-label="Default select example" name="category_id">
-                                    <option selected>Open this select menu</option>
+                                <select class="form-select" type="" aria-label="Default select example" name="category_id" >
+                                    <option selected value="{{$product->category_id}}">{{$categories[$product->category_id]->name}}</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
@@ -91,14 +90,47 @@
                                        value="{{$product->in_stock}}" required autofocus min="0">
                             </div>
 
-                            <label for="thumbnail"
-                                   class="col-md-4   align-content-center d-flex">{{ __('thumbnail') }}</label>
-                            <div class="form-group">
-                                <input type="text" placeholder="thumbnail"
-                                       class="form-control" name="thumbnail"
-                                       value="{{$product->thumbnail}}" required autofocus>
-                            </div>
 
+
+
+
+                            <div class="form-group ">
+                                <label for="thumbnail"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Thumbnail') }}</label>
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <div class="col-md-12">
+                                            <img src="{{ $product->thumbnailUrl  }}" style="height: 350px" id="thumbnail-preview" alt="">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="file" name="thumbnail" id="thumbnail">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="images" class="col-md-4 col-form-label text-md-right">{{ __('Images') }}</label>
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <div class="col-md-12">
+                                            <div class="row images-wrapper">
+                                                @foreach($product->images as $image)
+                                                    @if(Storage::has($image->path))
+                                                        <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                                                            <img src="{{ $image->url }}" class="card-img-top" style="max-width: 80%; margin: 0 auto; display: block;">
+                                                            <a data-route="{{ route('ajax.images.delete', $image->id) }}"
+                                                               class="btn btn-danger remove-product-image">x</a>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="file" name="images[]" id="images" multiple>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <button type="submit" class="btn--primary style2">{{ __('edit') }} </button>
                         </form>
@@ -111,3 +143,8 @@
     </section>
 
 @endsection
+
+@push("footer-scripts")
+    @vite(["resources/js/images-preview.js","resources/js/images-actions.js"])
+@endpush
+

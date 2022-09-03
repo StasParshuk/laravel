@@ -15,13 +15,16 @@ class FileStorageService implements FileStorageServiceContract
      * @param $file
      * @return string
      */
-    public static function upload(UploadedFile|string $file): string
+    public static function upload(UploadedFile|null|string $file): string
     {
         if (is_string($file)) {
             return str_replace("public/storage", "", $file);
         }
-        return $Filepath = Storage::putFile('public/storage/photos', $file);
+        if (!empty($file)){
+            return $Filepath = Storage::putFile('public/storage/photos', $file)  ;
+        }
 
+return "";
     }
 
     /**

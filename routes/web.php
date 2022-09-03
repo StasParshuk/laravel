@@ -92,3 +92,6 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware("auth")->name('home');
+
+Route::delete("ajax/images/{image}",\App\Http\Controllers\Ajax\RemoveImageController::class)->middleware("auth","admin")->name("ajax.images.delete");
+

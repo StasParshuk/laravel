@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'public/assets/fonts/flaticon.scss',
                 'public/assets/scss/style.scss',
+                'resources/js/images-preview.js',
+                'resources/js/images-actions.js',
             ],
             refresh: true,
         }),
