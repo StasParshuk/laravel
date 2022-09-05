@@ -30,54 +30,17 @@
                     <div class="col-xl-12">
                         <div class="product-categories-one__inner">
                             <ul>
+                                @for($i = 1; $i <= 5; $i++)
                                 <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img1.png"
+                                        <div class="inner"><img src="https://picsum.photos/85"
                                                                 alt=""></div>
                                     </a>
                                     <div class="title"><a href="#0">
                                             <h6>Accessories</h6>
                                         </a></div>
                                 </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img2.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Furnitures</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img3.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Jewellery</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img4.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Shoes</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img5.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Electronics</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img6.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Fashion</h6>
-                                        </a></div>
-                                </li>
+                                @endfor
+
                             </ul>
                         </div>
                     </div>
@@ -246,7 +209,7 @@
                                                                 class="d-block"> <img
                                                                     src="{{$product->thumbnailUrl ?? asset("assets/images/home-three/productss2-hover-1.png")}}"
                                                                     class="first-img" alt=""> <img
-                                                                    src="{{asset("assets/images/home-three/productss2-hover-1.png")}}"
+                                                                    src="https://picsum.photos/200"
                                                                     alt="" class="hover-img">
                                                             </a>
                                                             <div class="products-grid-one__badge-box"><span

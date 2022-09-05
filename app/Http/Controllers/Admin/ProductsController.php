@@ -7,6 +7,8 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Repositories\Contracts\ProductRepositoryContract;
+use App\Repositories\ProductRepository;
 use App\Services\FileStorageService;
 use App\Services\ImagesService;
 use Exception;
@@ -16,7 +18,7 @@ use phpDocumentor\Reflection\Exception\PcreException;
 
 class ProductsController extends Controller
 {
-
+public function __construct(protected ProductRepositoryContract $productRepository){}
 
     public function index()
     {
@@ -33,32 +35,12 @@ class ProductsController extends Controller
 
     public function store(CreateProductRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $data = request()->validate($request->rules());
-            if (!empty($data["images"])) {
-                $images = $data["images"];
-                unset($data["images"]);
-            }
 
-            if (!empty($data["thumbnail"])) {
-                FileStorageService::upload($data["thumbnail"]);
-            }
-
-            $product = Product::create($data);
-
-            ImagesService::attach($product, "images", $images);
-
-            DB::commit();
-            return redirect()->route("admin.products.index")->with('status', "The product #{$product->id} was successfully created!");
-        } catch (Exception $exception) {
-            DB::rollBack();
-            logs()->warning($exception);
-
-            return redirect()->back()->with("warn", "oops some wrong see logs");
+        if ($product = $this->productRepository->create($request)) {
+            return redirect()->route('admin.products.index')->with('status', "The product #{$product->id} was successfully created!");
+        } else {
+            return redirect()->back()->with('warn', 'Oops smth wrong. See logs')->withInput();
         }
-
-
     }
 
     public function edit(Product $product)
@@ -70,37 +52,17 @@ class ProductsController extends Controller
 
     public function update(Product $product, UpdateProductRequest $request)
     {
-
-        try {
-            DB::beginTransaction();
-            $data = request()->validate($request->rules());
-            if (!empty($data["images"])) {
-                $images = $data["images"];
-                unset($data["images"]);
-            }
-
-            if (!empty($data["thumbnail"])) {
-                FileStorageService::upload($data["thumbnail"]);
-            }
-
-            $product->update($data);
-            if (!empty($images)) {
-                ImagesService::attach($product, "images", $images);
-            }
-
-
-            DB::commit();
+        if ($product = $this->productRepository->update( $product,$request)) {
             return redirect()->route("admin.products.index")->with('status', "The product #{$product->id} was successfully updated!");
-        } catch (Exception $exception) {
-            DB::rollBack();
-            logs()->warning($exception);
-
+        } else {
             return redirect()->back()->with("alert", "oops some wrong see logs");
         }
+
     }
 
     public function destroy(Product $product)
     {
+
         $product->delete();
         return redirect(route("admin.products.index"));
     }

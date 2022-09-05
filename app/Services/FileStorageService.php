@@ -33,7 +33,7 @@ return "";
      */
     public static function remove(string $file)
     {
-        // TODO: Implement remove() method.
+       Storage::delete($file);
     }
 
 

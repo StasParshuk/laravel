@@ -130,10 +130,10 @@
                                 <div class="shop-details-top-buy-now-btn"><a href="{{route("admin.category.edit",$product)}}" class="btn--primary">
                                         Edit</a>
                                 </div>
-                                    <form action="{{route("admin.category.destroy",$product)}}" method="POST" >
+                                <form action="{{route("admin.category.destroy",$product)}}" method="POST" >
                                     @csrf
                                     @method("delete")
-                                <div class="shop-details-top-buy-now-btn"> <button type="submit" class="btn--primary style2">{{ __('Delete1') }} </button></div>
+                                    <div class="shop-details-top-buy-now-btn"> <button type="submit" class="btn--primary style2">{{ __('Delete Category') }} </button></div>
                                 </form>
                                 <div class="shop-details-top-social-box">
                                     <p>Share:</p>

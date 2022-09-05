@@ -51,17 +51,18 @@ class CategoryController extends Controller
         return redirect(route("admin.category.index"));
     }
 
-    public function destroy(Category $product)
-    {
-        $product->delete();
+    public function destroy(Category $category) {
+        $category->delete();
+
         return redirect(route("admin.category.index"))->with('status', "The category  was successfully Deleted!");
     }
 
-    public function show(Category $product)
-    {
+public
+function show(Category $product)
+{
 
-        return view('admin.categories.show', compact(["product"]));
-    }
+    return view('admin.categories.show', compact(["product"]));
+}
 
 
 }
