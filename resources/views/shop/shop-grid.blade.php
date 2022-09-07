@@ -215,7 +215,7 @@
                                                             <div class="products-grid-one__badge-box"><span
                                                                     class="bg_base badge new ">New</span>
                                                             </div>
-                                                            <a href="{{route("cart")}}"
+                                                            <a href="{{route("cart.add",$product)}}"
                                                                class="addcart btn--primary style2">
                                                                 Add To Cart </a>
                                                             <div class="products-grid__usefull-links">
@@ -277,7 +277,7 @@ compare</span> </a></li>
                                                             <p class="text">{{$product->description}} </p>
                                                             <div class="product-grid-two__overlay-box">
                                                                 <div class="title">
-                                                                    <h6><a href="cart.html">Add To Cart</a></h6>
+                                                                    <h6><a href="{{route("cart.add",$product)}}">Add To Cart</a></h6>
                                                                 </div>
                                                                 <div class="icon">
                                                                     <ul>

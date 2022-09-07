@@ -275,11 +275,15 @@
                                                 <li class="d-lg-block d-none"><a href="{{route("wishlist")}}"
                                                                                  class="number"><i
                                                             class="flaticon-heart"></i> <span
-                                                            class="count">(2)</span> </a></li>
-                                                <li class="cartm"><a href="{{route("cart")}}" class="number cart-icon">
-                                                        <i
-                                                            class="flaticon-shopping-cart"></i><span
-                                                            class="count">(5)</span> </a></li>
+                                                            class="count">(@if(Cart::instance('cart')->count() > 0) {{ Cart::instance('cart')->count() }} @endif)</span> </a></li>
+                                                <li class="cart"><a href="{{route("cart")}}" class="number cart-icon">
+                                                        <i class="flaticon-shopping-cart"></i>
+                                                        <span class="count">(@if(Cart::instance('cart')->count() > 0) {{ Cart::instance('cart')->count() }} @endif)</span>
+                                                    </a>
+                                                </li>
+
+
+
                                             </ul>
                                         </div>
                                     </div>
