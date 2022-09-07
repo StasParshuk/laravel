@@ -28,8 +28,8 @@
                                 <div class="products-three-single w-100">
                                     <div class="products-three-single-img">
                                         <a href="shop-details-3.html" class="d-block">
-                                            <img src="assets/images/home-three/products-1.jpg" class="first-img" alt="">
-                                            <img src="assets/images/home-three/products-hover-1.png" alt="" class="hover-img">
+                                            <img src="https://picsum.photos/1000/1200" class="first-img" alt="">
+                                            <img src="https://picsum.photos/1000/1200" alt="" class="hover-img">
                                         </a>
                                         <div class="products-grid-one__badge-box"> <span class="bg_base badge new ">New</span> <span class="bg_black badge discount">-40%</span> </div> <a href="cart.html" class="addcart btn--primary style2"> Add To Cart </a>
                                         <div class="products-grid__usefull-links">
@@ -53,7 +53,7 @@
                                 <div class="products-three-single w-100">
                                     <div class="products-three-single-img">
                                         <a href="shop-details-3.html" class="d-block">
-                                            <img src="assets/images/home-three/products-2.jpg" alt="">
+                                            <img src="https://picsum.photos/1000/1200" alt="">
                                         </a>
                                         <a href="cart.html" class="addcart btn--primary style2">
                                             Add To Cart </a>
@@ -84,8 +84,8 @@
                                 <div class="products-three-single w-100">
                                     <div class="products-three-single-img">
                                         <a href="shop-details-3.html" class="d-block">
-                                            <img src="assets/images/home-three/productss2-1.jpg" class="first-img" alt="">
-                                            <img src="assets/images/home-three/productss2-hover-1.png" alt="" class="hover-img">
+                                            <img src="https://picsum.photos/1000/1200" class="first-img" alt="">
+                                            <img src="https://picsum.photos/1000/1200" alt="" class="hover-img">
                                         </a>
                                         <div class="products-grid-one__badge-box"> <span class="bg_base badge new ">New</span> <span class="bg_black badge discount">-40%</span> </div> <a href="cart.html" class="addcart btn--primary style2"> Add To Cart </a>
                                         <div class="products-grid__usefull-links">
@@ -109,7 +109,7 @@
                                 <div class="products-three-single w-100">
                                     <div class="products-three-single-img">
                                         <a href="shop-details-3.html" class="d-block">
-                                            <img src="assets/images/home-three/productss2-2.jpg" alt="">
+                                            <img src="https://picsum.photos/1000/1200" alt="">
                                         </a>
                                         <a href="cart.html" class="addcart btn--primary style2">
                                             Add To Cart </a>
@@ -140,8 +140,8 @@
                                 <div class="products-three-single w-100">
                                     <div class="products-three-single-img">
                                         <a href="shop-details-3.html" class="d-block">
-                                            <img src="assets/images/home-three/productss3-1.jpg" class="first-img" alt="">
-                                            <img src="assets/images/home-three/productss3-hover-1.jpg" alt="" class="hover-img">
+                                            <img src="https://picsum.photos/1000/1200" class="first-img" alt="">
+                                            <img src="https://picsum.photos/1000/1200" alt="" class="hover-img">
                                         </a>
                                         <div class="products-grid-one__badge-box"> <span class="bg_base badge new ">New</span> <span class="bg_black badge discount">-40%</span> </div> <a href="cart.html" class="addcart btn--primary style2"> Add To Cart </a>
                                         <div class="products-grid__usefull-links">
@@ -165,7 +165,7 @@
                                 <div class="products-three-single w-100">
                                     <div class="products-three-single-img">
                                         <a href="shop-details-3.html" class="d-block">
-                                            <img src="assets/images/home-three/productss3-2.jpg" alt="">
+                                            <img src="https://picsum.photos/1000/1200" alt="">
                                         </a>
                                         <a href="cart.html" class="addcart btn--primary style2">
                                             Add To Cart </a>

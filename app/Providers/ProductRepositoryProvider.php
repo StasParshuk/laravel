@@ -4,30 +4,29 @@ namespace App\Providers;
 
 use App\Repositories\Contracts\ProductRepositoryContract;
 use App\Repositories\ProductRepository;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ProductRepositoryProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-
+        $this->app->bind(
+            ProductRepositoryContract::class,
+            ProductRepository::class);
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
-        Paginator::defaultView('vendor.pagination.bootstrap-5');
-
-        Paginator::defaultSimpleView('vendor.pagination.simple-bootstrap-5');
+        //
     }
 }

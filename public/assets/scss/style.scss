@@ -1,41 +1,41 @@
-/*============================================ 
+/*============================================
 Template Name: Karte
 Version: 1.1
 Author: Mate_Themes
 Author URI: https://themeforest.net/user/mate_themes
 Description: Karte - Multipurpose E-Commerce Html Template
-/*======== Table of Css Content ==========*/ 
-/* 
+/*======== Table of Css Content ==========*/
+/*
 
-1: Normalize Css 
+1: Normalize Css
 2: Menu Css
 3: Banner Css
 4: Home Pages Css
 5: Footer Css
 6: Imnner Pages Csss
-7: Blog Pages Css 
+7: Blog Pages Css
 
 =========================
 =============================
 
-*/ 
-// Sass Global 
+*/
+// Sass Global
 @import "main/_normalize.scss";
-@import "main/_global.scss"; 
-@import "main/_buttons.scss"; 
+@import "main/_global.scss";
+@import "main/_buttons.scss";
 @import "main/_pama.scss";
-// pages  
+// pages
 @import "pages/_menu.scss";
-@import "pages/_banner.scss"; 
-@import "pages/_home-section.scss";  
-@import "pages/_footer.scss"; 
-@import "pages/_inner-pages.scss"; 
-@import "pages/_blog.scss"; 
-@import "pages/_product-single.scss";  
-@import "pages/_home4.scss";  
-@import "pages/_home5.scss";  
-@import "pages/_home6.scss";  
-@import "pages/_home7.scss";   
+@import "pages/_banner.scss";
+@import "pages/_home-section.scss";
+@import "pages/_footer.scss";
+@import "pages/_inner-pages.scss";
+@import "pages/_blog.scss";
+@import "pages/_product-single.scss";
+@import "pages/_home4.scss";
+@import "pages/_home5.scss";
+@import "pages/_home6.scss";
+@import "pages/_home7.scss";
 
 
 
@@ -105,7 +105,7 @@ Description: Karte - Multipurpose E-Commerce Html Template
         width: 15px;
     }
 }
- 
+
 
 /* scroll bottom to top Css */
 .scrollToTop {
@@ -136,7 +136,7 @@ Description: Karte - Multipurpose E-Commerce Html Template
 .scrollToTop:hover {
     color: #ffffff;
     text-decoration: none;
-} 
+}
 @media (max-width: 1199px) {
     #scrollUp {
         right: 0%;
@@ -149,3 +149,5 @@ Description: Karte - Multipurpose E-Commerce Html Template
 }
 
 /*====scroll bottom to top button====*/
+
+

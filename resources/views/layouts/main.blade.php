@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title For This Document -->
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title> Laravel</title>
     <!-- Favicon For This Document -->
     <link rel="shortcut icon" href="{{ asset("assets/images/logo/favicon-32x32.png")}}" type="image/x-icon">
@@ -17,28 +20,28 @@
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <!-- FlatIcon Css -->
-    <link rel="stylesheet" href="{{ asset("assets/fonts/flaticon.css")}}">
+{{--    <link rel="stylesheet" href="{{ asset("assets/fonts/flaticon.css")}}">--}}
 
     <!-- Slick Slider Css -->
 
 
-    <!-- Slick Slider Css -->
-    <link rel="stylesheet" href="{{ asset("assets/css/plugin/slick.css")}}">
-    <!--  Ui Tabs Css -->
-    <link rel="stylesheet" href="{{ asset("assets/css/plugin/jquery-ui.min.css")}}">
-    <!-- Magnific-popup Css -->
-    <link rel="stylesheet" href="{{ asset("assets/css/plugin/magnific-popup.css")}}">
-    <!-- Nice Select Css -->
-    <link rel="stylesheet" href="{{ asset("assets/css/plugin/nice-select.v1.0.css")}}">
-    <!-- Animate Css -->
-    <link rel="stylesheet" href="{{ asset("assets/css/plugin/animate.css")}}">
-    <!-- Style Css -->
-    <link rel="stylesheet" href="{{ asset("assets/css/style.css")}}">
+{{--    <!-- Slick Slider Css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset("assets/css/plugin/slick.css")}}">--}}
+{{--    <!--  Ui Tabs Css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset("assets/css/plugin/jquery-ui.min.css")}}">--}}
+{{--    <!-- Magnific-popup Css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset("assets/css/plugin/magnific-popup.css")}}">--}}
+{{--    <!-- Nice Select Css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset("assets/css/plugin/nice-select.v1.0.css")}}">--}}
+{{--    <!-- Animate Css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset("assets/css/plugin/animate.css")}}">--}}
+{{--    <!-- Style Css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset("assets/css/style.css")}}">--}}
 
 
-    <link rel="stylesheet" href="{{ asset("build/assets/app.c090eeea.css")}}">
-    <link rel="stylesheet" href="{{ asset("build/assets/flaticon.cf1ee0ee.css")}}">
-    <link rel="stylesheet" href="{{ asset("build/assets/style.6577e428.css")}}">
+{{--    <link rel="stylesheet" href="{{ asset("build/assets/app.c090eeea.css")}}">--}}
+{{--    <link rel="stylesheet" href="{{ asset("build/assets/flaticon.cf1ee0ee.css")}}">--}}
+{{--    <link rel="stylesheet" href="{{ asset("build/assets/style.6577e428.css")}}">--}}
 
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'public/assets/fonts/flaticon.scss',
@@ -47,7 +50,7 @@
 
 <body class="shoe">
 <!-- ==========Preloader========== -->
-{{--    <div class="loader"><span>Karte...</span></div>--}}
+{{--    <div class="loader"><span>stas</span></div>--}}
 <!-- ==========Preloader========== -->
 <!--===scroll bottom to top===-->
 <a href="#0" class="scrollToTop"><i class="flaticon-up-arrow "></i></a>
@@ -68,6 +71,16 @@
                 </div>
             @endif
 
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if(session('warn'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -91,18 +104,7 @@
                                     <p class="d-flex align-items-center"> <span class="icon"> <i
                                                 class="flaticon-power"></i> </span> Welcome to stas Online Shop</p>
                                     <div class="right d-flex align-items-center ">
-                                        <div class="language currency"><select>
-                                                <option>USD</option>
-                                                <option value="1">INR</option>
-                                                <option value="2">BDT</option>
-                                            </select>
-                                        </div>
-                                        <div class="language two"><select>
-                                                <option>ENGLISH</option>
-                                                <option value="1">GERMAN</option>
-                                                <option value="4">FRENCH</option>
-                                            </select>
-                                        </div>
+
                                         <a href="{{route("login")}}"> </a>
                                         @csrf
                                         @guest
@@ -273,11 +275,15 @@
                                                 <li class="d-lg-block d-none"><a href="{{route("wishlist")}}"
                                                                                  class="number"><i
                                                             class="flaticon-heart"></i> <span
-                                                            class="count">(2)</span> </a></li>
-                                                <li class="cartm"><a href="{{route("cart")}}" class="number cart-icon">
-                                                        <i
-                                                            class="flaticon-shopping-cart"></i><span
-                                                            class="count">(5)</span> </a></li>
+                                                            class="count">(@if(Cart::instance('cart')->count() > 0) {{ Cart::instance('cart')->count() }} @endif)</span> </a></li>
+                                                <li class="cart"><a href="{{route("cart")}}" class="number cart-icon">
+                                                        <i class="flaticon-shopping-cart"></i>
+                                                        <span class="count">(@if(Cart::instance('cart')->count() > 0) {{ Cart::instance('cart')->count() }} @endif)</span>
+                                                    </a>
+                                                </li>
+
+
+
                                             </ul>
                                         </div>
                                     </div>
@@ -421,7 +427,7 @@
 <!--==== Js Scripts End ====-->
 
 <script src="{{ asset("build/assets/app.d6357cc5.js")}}"></script>
-
+@stack("footer-scripts")
 </body>
 
 </html>

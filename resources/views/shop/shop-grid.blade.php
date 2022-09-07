@@ -30,54 +30,17 @@
                     <div class="col-xl-12">
                         <div class="product-categories-one__inner">
                             <ul>
+                                @for($i = 1; $i <= 5; $i++)
                                 <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img1.png"
+                                        <div class="inner"><img src="https://picsum.photos/85"
                                                                 alt=""></div>
                                     </a>
                                     <div class="title"><a href="#0">
                                             <h6>Accessories</h6>
                                         </a></div>
                                 </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img2.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Furnitures</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img3.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Jewellery</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img4.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Shoes</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img5.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Electronics</h6>
-                                        </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                        <div class="inner"><img src="assets/images/shop/product-categories-v1-img6.png"
-                                                                alt=""></div>
-                                    </a>
-                                    <div class="title"><a href="#0">
-                                            <h6>Fashion</h6>
-                                        </a></div>
-                                </li>
+                                @endfor
+
                             </ul>
                         </div>
                     </div>
@@ -244,15 +207,15 @@
                                                         <div class="products-three-single-img"><a
                                                                 href="{{route("shop.one",$product)}}"
                                                                 class="d-block"> <img
-                                                                    src="{{asset("assets/images/home-three/productss2-1.jpg")}}"
+                                                                    src="{{$product->thumbnailUrl ?? asset("assets/images/home-three/productss2-hover-1.png")}}"
                                                                     class="first-img" alt=""> <img
-                                                                    src="{{asset("assets/images/home-three/productss2-hover-1.png")}}"
+                                                                    src="https://picsum.photos/200"
                                                                     alt="" class="hover-img">
                                                             </a>
                                                             <div class="products-grid-one__badge-box"><span
                                                                     class="bg_base badge new ">New</span>
                                                             </div>
-                                                            <a href="{{route("cart")}}"
+                                                            <a href="{{route("cart.add",$product)}}"
                                                                class="addcart btn--primary style2">
                                                                 Add To Cart </a>
                                                             <div class="products-grid__usefull-links">
@@ -265,144 +228,11 @@ wishlist</span> </a></li>
                                                                                 class="flaticon-left-and-right-arrows"></i>
                                                                             <span>
 compare</span> </a></li>
-                                                                    <li><a href="#popup5" class="popup_link"> <i
-                                                                                class="flaticon-visibility"></i>
-                                                                            <span> quick view</span>
-                                                                        </a></li>
+
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <div id="popup5"
-                                                             class="product-gird__quick-view-popup mfp-hide">
-                                                            <div class="container">
-                                                                <div
-                                                                    class="row justify-content-between align-items-center">
-                                                                    <div class="col-lg-6">
-                                                                        <div class="quick-view__left-content">
-                                                                            <div class="tabs">
-                                                                                <div class="popup-product-thumb-box">
-                                                                                    <ul>
-                                                                                        <li class="tab-nav popup-product-thumb">
-                                                                                            <a href="#tabb1">
-                                                                                                <img
-                                                                                                    src="assets/images/shop/products-v6-img5.jpg"
-                                                                                                    alt=""> </a></li>
-                                                                                        <li class="tab-nav popup-product-thumb ">
-                                                                                            <a href="#tabb2">
-                                                                                                <img
-                                                                                                    src="assets/images/shop/products-v6-img6.jpg"
-                                                                                                    alt=""> </a></li>
-                                                                                        <li class="tab-nav popup-product-thumb ">
-                                                                                            <a href="#tabb3">
-                                                                                                <img
-                                                                                                    src="assets/images/shop/products-v6-img7.jpg"
-                                                                                                    alt=""> </a></li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="popup-product-main-image-box">
-                                                                                    <div id="tabb1"
-                                                                                         class="tab-item popup-product-image">
-                                                                                        <div
-                                                                                            class="popup-product-single-image">
-                                                                                            <img
-                                                                                                src="assets/images/shop/products-v6-img5.jpg"
-                                                                                                alt=""></div>
-                                                                                    </div>
-                                                                                    <div id="tabb2"
-                                                                                         class="tab-item popup-product-image">
-                                                                                        <div
-                                                                                            class="popup-product-single-image">
-                                                                                            <img
-                                                                                                src="assets/images/shop/products-v6-img6.jpg"
-                                                                                                alt=""></div>
-                                                                                    </div>
-                                                                                    <div id="tabb3"
-                                                                                         class="tab-item popup-product-image">
-                                                                                        <div
-                                                                                            class="popup-product-single-image">
-                                                                                            <img
-                                                                                                src="assets/images/shop/products-v6-img7.jpg"
-                                                                                                alt=""></div>
-                                                                                    </div>
-                                                                                    <button class="prev"><i
-                                                                                            class="flaticon-back"></i>
-                                                                                    </button>
-                                                                                    <button class="next"><i
-                                                                                            class="flaticon-next"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-6">
-                                                                        <div class="popup-right-content">
-                                                                            <h3>Brown Office Shoe</h3>
-                                                                            <div class="ratting"><i
-                                                                                    class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i>
-                                                                                <i class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i>
-                                                                                <span>(112)</span></div>
-                                                                            <p class="text"> Hydrating Plumping Intense
-                                                                                Shine Lip Colour
-                                                                            </p>
-                                                                            <div class="price">
-                                                                                <h2> $42 USD
-                                                                                    <del> $65 USD</del>
-                                                                                </h2>
-                                                                                <h6> In stuck</h6>
-                                                                            </div>
-                                                                            <div class="color-varient"><a href="#0"
-                                                                                                          class="color-name pink">
-                                                                                    <span>Pink</span> </a> <a href="#0"
-                                                                                                              class="color-name red">
-                                                                                    <span>Red</span> </a>
-                                                                                <a href="#0"
-                                                                                   class="color-name yellow"><span>Yellow</span>
-                                                                                </a> <a href="#0"
-                                                                                        class="color-name blue">
-                                                                                    <span>Blue</span>
-                                                                                </a> <a href="#0"
-                                                                                        class="color-name black">
-                                                                                    <span>Black</span> </a></div>
-                                                                            <div class="add-product">
-                                                                                <h6>Qty:</h6>
-                                                                                <div class="button-group">
-                                                                                    <div
-                                                                                        class="qtySelector text-center">
-                                                                                    <span class="decreaseQty"><i
-                                                                                            class="flaticon-minus"></i>
-                                                                                    </span> <input type="number"
-                                                                                                   class="qtyValue"
-                                                                                                   value="1">
-                                                                                        <span class="increaseQty"> <i
-                                                                                                class="flaticon-plus"></i>
-                                                                                    </span></div>
-                                                                                    <button class="btn--primary "> Add
-                                                                                        to
-                                                                                        Cart
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="payment-method"><a href="#0">
-                                                                                    <img
-                                                                                        src="assets/images/payment_method/method_1.png"
-                                                                                        alt=""> </a>
-                                                                                <a href="#0"> <img
-                                                                                        src="assets/images/payment_method/method_2.png"
-                                                                                        alt=""> </a> <a href="#0"> <img
-                                                                                        src="assets/images/payment_method/method_3.png"
-                                                                                        alt=""> </a>
-                                                                                <a href="#0"> <img
-                                                                                        src="assets/images/payment_method/method_4.png"
-                                                                                        alt=""> </a></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
                                                         <div class="products-three-single-content text-center"> <span>Men
                                                             Shoes</span>
                                                             <h5>
@@ -437,130 +267,7 @@ compare</span> </a></li>
                                                                 <img src="{{asset("assets/images/home-three/products-2.jpg")}}"
                                                                      alt="">
                                                             </a></div>
-                                                        <div id="popup2z"
-                                                             class="product-gird__quick-view-popup mfp-hide">
-                                                            <div class="container">
-                                                                <div
-                                                                    class="row justify-content-between align-items-center">
-                                                                    <div class="col-lg-6">
-                                                                        <div class="quick-view__left-content">
-                                                                            <div class="tabs">
-                                                                                <div class="popup-product-thumb-box">
-                                                                                    <ul>
-                                                                                        <li class="tab-nav popup-product-thumb">
-                                                                                            <a href="#tab1z"> <img
-                                                                                                    src="assets/images/shop/shop-grid-page-img2.jpg"
-                                                                                                    alt=""> </a></li>
-                                                                                        <li class="tab-nav popup-product-thumb ">
-                                                                                            <a href="#tab2z"> <img
-                                                                                                    src="assets/images/shop/shop-grid-page-img3.jpg"
-                                                                                                    alt=""> </a></li>
-                                                                                        <li class="tab-nav popup-product-thumb ">
-                                                                                            <a href="#tab3z"> <img
-                                                                                                    src="assets/images/shop/shop-grid-page-img4.jpg"
-                                                                                                    alt=""> </a></li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="popup-product-main-image-box">
-                                                                                    <div id="tab1z"
-                                                                                         class="tab-item popup-product-image">
-                                                                                        <div
-                                                                                            class="popup-product-single-image">
-                                                                                            <img
-                                                                                                src="assets/images/shop/shop-grid-page-img2.jpg"
-                                                                                                alt=""></div>
-                                                                                    </div>
-                                                                                    <div id="tab2z"
-                                                                                         class="tab-item popup-product-image">
-                                                                                        <div
-                                                                                            class="popup-product-single-image">
-                                                                                            <img
-                                                                                                src="assets/images/shop/shop-grid-page-img3.jpg"
-                                                                                                alt=""></div>
-                                                                                    </div>
-                                                                                    <div id="tab3z"
-                                                                                         class="tab-item popup-product-image">
-                                                                                        <div
-                                                                                            class="popup-product-single-image">
-                                                                                            <img
-                                                                                                src="assets/images/shop/shop-grid-page-img4.jpg"
-                                                                                                alt=""></div>
-                                                                                    </div>
-                                                                                    <button class="prev"><i
-                                                                                            class="flaticon-back"></i>
-                                                                                    </button>
-                                                                                    <button class="next"><i
-                                                                                            class="flaticon-next"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-6">
-                                                                        <div class="popup-right-content">
-                                                                            <h3>Diamond Ring Coyo</h3>
-                                                                            <div class="ratting"><i
-                                                                                    class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i> <i
-                                                                                    class="flaticon-star"></i>
-                                                                                <span>(123)</span></div>
-                                                                            <p class="text"> Wooden Tables to Brighten
-                                                                                Your
-                                                                                Dining Room </p>
-                                                                            <div class="price">
-                                                                                <h2> $50 USD
-                                                                                    <del> $105 USD</del>
-                                                                                </h2>
-                                                                                <h6> In stuck</h6>
-                                                                            </div>
-                                                                            <div class="color-varient"><a href="#0"
-                                                                                                          class="color-name pink">
-                                                                                    <span>Pink</span> </a> <a href="#0"
-                                                                                                              class="color-name red">
-                                                                                    <span>Red</span>
-                                                                                </a> <a href="#0"
-                                                                                        class="color-name yellow"><span>Yellow</span>
-                                                                                </a> <a href="#0"
-                                                                                        class="color-name blue">
-                                                                                    <span>Blue</span> </a> <a href="#0"
-                                                                                                              class="color-name black">
-                                                                                    <span>Black</span> </a></div>
-                                                                            <div class="add-product">
-                                                                                <h6>Qty:</h6>
-                                                                                <div class="button-group">
-                                                                                    <div
-                                                                                        class="qtySelector text-center">
-                                                                                    <span class="decreaseQty"><i
-                                                                                            class="flaticon-minus"></i>
-                                                                                    </span> <input type="number"
-                                                                                                   class="qtyValue"
-                                                                                                   value="1">
-                                                                                        <span class="increaseQty"> <i
-                                                                                                class="flaticon-plus"></i>
-                                                                                    </span></div>
-                                                                                    <button class="btn--primary "> Add
-                                                                                        to Cart
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="payment-method"><a href="#0">
-                                                                                    <img
-                                                                                        src="assets/images/payment_method/method_1.png"
-                                                                                        alt=""> </a> <a href="#0"> <img
-                                                                                        src="assets/images/payment_method/method_2.png"
-                                                                                        alt=""> </a> <a href="#0"> <img
-                                                                                        src="assets/images/payment_method/method_3.png"
-                                                                                        alt=""> </a> <a href="#0"> <img
-                                                                                        src="assets/images/payment_method/method_4.png"
-                                                                                        alt=""> </a></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
                                                         <div class="product-grid-two-content text-center">
                                                             <span>Modern</span>
                                                             <h5>
@@ -570,12 +277,11 @@ compare</span> </a></li>
                                                             <p class="text">{{$product->description}} </p>
                                                             <div class="product-grid-two__overlay-box">
                                                                 <div class="title">
-                                                                    <h6><a href="cart.html">Add To Cart</a></h6>
+                                                                    <h6><a href="{{route("cart.add",$product)}}">Add To Cart</a></h6>
                                                                 </div>
                                                                 <div class="icon">
                                                                     <ul>
-                                                                        <li><a href="#popup2z" class="popup_link"><i
-                                                                                    class="flaticon-eye"></i></a></li>
+
                                                                         <li><a href="wishlist.html"><i
                                                                                     class="flaticon-heart"></i></a></li>
                                                                     </ul>

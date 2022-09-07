@@ -35,7 +35,7 @@
                                    class="col-md-4   align-content-center d-flex">{{ __('Category') }}</label>
                             <div class="form-group">
                                 <select class="form-select" type=""  aria-label="Default select example" name="category_id">
-                                    <option selected>Open this select menu</option>
+                                    <option selected value="{{old("category_id")}}">{{$categories[old("category_id")]->name?? "select value"}}</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
@@ -94,9 +94,22 @@
                             <div class="mb-3">
                                 <input type="file" placeholder="thumbnail"
                                        class="form-control" name="thumbnail"
-                                       value="{{old("thumbnail")}}" required autofocus>
+                                       value="{{old("thumbnail")}}" required autofocus >
                             </div>
-
+                            <label for="thumbnail"
+                                   class="col-md-4   align-content-center d-flex">{{ __('thumbnail') }}</label>
+                            <div class="form-group row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row images-wrapper popup-product-main-image-box"></div>
+                                        </div>
+                                        <div  class="form-control ">
+                                            <input  value="{{old("images[]")}}" type="file" name="images[]" id="images" multiple>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <button type="submit" class="btn--primary style2">{{ __('Create') }} </button>
                         </form>
@@ -107,3 +120,7 @@
     </section>
 
 @endsection
+
+@push("footer-scripts")
+    @vite(["resources/js/images-preview.js"])
+@endpush

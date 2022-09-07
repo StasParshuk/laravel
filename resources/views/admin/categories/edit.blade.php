@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-
+@dump($product)
     <section class="login-page pt-120 pb-120 wow fadeInUp animated">
         <div class="container">
             <div class="row justify-content-center">

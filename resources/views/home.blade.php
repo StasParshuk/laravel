@@ -11,7 +11,7 @@
                             <h2>My Account </h2>
                             <div class="breadcrumb-menu">
                                 <ul>
-                                    <li><a href="index.html"><i class="flaticon-home pe-2"></i>Home</a></li>
+                                    <li><a href="/"><i class="flaticon-home pe-2"></i>Home</a></li>
                                     <li> <i class="flaticon-next"></i> </li>
                                     <li class="active">My Account</li>
                                 </ul>

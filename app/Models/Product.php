@@ -47,5 +47,21 @@ return new Attribute(
         $rating = $this->ratings()->with("rateable_id",$this->id)->get();
         return $rating->where("user_id",auth()->id())->first();
     }
+
+
+    public function endPrice() : Attribute
+    {
+        return new Attribute(
+            get: function() {
+                $price = is_null($this->attributes['discount'])
+                    ? $this->attributes['price']
+                    : ($this->attributes['price'] - ($this->attributes['price'] * ($this->attributes['discount'] / 100)));
+
+                return $price < 0 ? 0 : round($price, 2);
+            }
+        );
+    }
+
+ 
 }
 

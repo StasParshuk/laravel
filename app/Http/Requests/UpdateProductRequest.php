@@ -3,8 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use phpDocumentor\Reflection\Types\Nullable;
 
-class CreateProductRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +15,7 @@ class CreateProductRequest extends FormRequest
      */
     public function authorize()
     {
-        return auth()->check() && isAdmin(auth()->user());
+        return isAdmin(auth()->user());
     }
 
     /**
@@ -23,17 +25,19 @@ class CreateProductRequest extends FormRequest
      */
     public function rules()
     {
+        $productId = $this->route("product")->id;
+
         return
             [
-                "title" => "required|string|unique:products|min:2",
+                "title" => "required|string|min:2|" . Rule::unique("products","title")->ignore($productId) ,
                 "description" => "required|string|min:2",
                 "category_id" => "required|integer",
                 "short_description" => "required|string|min:2",
-                "SKU" => "unique:products|min:2",
+                "SKU" => "min:2|". Rule::unique("products","SKU")->ignore($productId),
                 "price" => "integer",
                 "discount" => "integer|min:0|max:99",
                 "in_stock" => "integer|min:0",
-                "thumbnail" => "required|image:jpeg,png",
-                "images.*"=> "image:jpeg,png"];
+                "thumbnail" => "nullable|image:jpeg,png",
+                "images.*"=> "nullable|image:jpeg,png"];
     }
 }
