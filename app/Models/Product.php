@@ -42,12 +42,15 @@ return new Attribute(
         return new Attribute(get: fn() => Storage::url($this->attributes['thumbnail']));
     }
 
+
+
+
     public function getUserRating()
     {
-        $rating = $this->ratings()->with("rateable_id",$this->id)->get();
-        return $rating->where("user_id",auth()->id())->first();
-    }
+        $ratings = $this->ratings()->where('rateable_id', $this->id)->get();
 
+        return $ratings->where('user_id', auth()->id())->first();
+    }
 
     public function endPrice() : Attribute
     {
@@ -62,6 +65,6 @@ return new Attribute(
         );
     }
 
- 
+
 }
 

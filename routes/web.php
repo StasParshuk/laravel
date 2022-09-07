@@ -55,7 +55,8 @@ Route::get('products/', [\App\Http\Controllers\Guest\ProductsController::class, 
 
 
 
-Route::middleware('auth', )->group(function (){Route::post("product/{rating}/add",[\App\Http\Controllers\Guest\ProductsController::class,"addRating"])->name("product.rating.add");
+Route::middleware('auth', )->group(function (){
+    Route::post("product/{product}/add",[\App\Http\Controllers\Guest\ProductsController::class,"addRating"])->name("product.rating.add");
 });
 
 Route::get('cart', [\App\Http\Controllers\CartController::class, 'index'])->name('cart');
@@ -90,7 +91,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(
         Route::get('category/{product}', [\App\Http\Controllers\Admin\CategoryController::class, "show"])->name(".show");
         Route::get('category/{product}/edit', [\App\Http\Controllers\Admin\CategoryController::class, "edit"])->name(".edit");
         Route::patch('category/{product}', [\App\Http\Controllers\Admin\CategoryController::class, "update"])->name(".update");
-        Route::delete('category/{delete}', [\App\Http\Controllers\Admin\CategoryController::class, "destroy"])->name(".destroy");}
+        Route::delete('category/{category}', [\App\Http\Controllers\Admin\CategoryController::class, "destroy"])->name(".destroy");}
 
     );
 

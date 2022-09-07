@@ -31,7 +31,6 @@ $userRating = $product->getUserRating();
     public function addRating(Request $request, Product $product)
     {
         $rating = $request->get("star");
-        dd($product);
 
         $product->rateOnce($rating);
 
