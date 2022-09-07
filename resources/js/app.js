@@ -1,2 +1,7 @@
 import './bootstrap';
-// import './images-preview';
+
+import "./product-actions";
+
+
+import './images-preview';
+

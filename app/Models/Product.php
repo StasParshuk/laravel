@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use willvincent\Rateable\Rateable;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory,Rateable;
 
     protected $guarded = [];
 
@@ -41,6 +42,12 @@ return new Attribute(
         return new Attribute(get: fn() => Storage::url($this->attributes['thumbnail']));
     }
 
+    public function getUserRating()
+    {
+        $rating = $this->ratings()->with("rateable_id",$this->id)->get();
+        return $rating->where("user_id",auth()->id())->first();
+    }
+
 
     public function endPrice() : Attribute
     {
@@ -55,5 +62,6 @@ return new Attribute(
         );
     }
 
+ 
 }
 

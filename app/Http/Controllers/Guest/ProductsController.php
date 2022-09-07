@@ -21,29 +21,21 @@ class ProductsController extends Controller
         return view("admin/products/create");
     }
 
-    public function store()
-    {
 
+
+    public  function show(Product $product) {
+$userRating = $product->getUserRating();
+            return view('shop.product',compact("product","userRating"));
     }
 
-    public function edit()
+    public function addRating(Request $request, Product $product)
     {
+        $rating = $request->get("star");
+        dd($product);
 
-    }
+        $product->rateOnce($rating);
 
-    public function update()
-    {
-
-    }
-
-    public function destroy()
-    {
-
-    }
-
-    public function show()
-    {
-
+        return redirect()->back();
     }
 
 }
