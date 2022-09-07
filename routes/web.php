@@ -49,15 +49,16 @@ Route::get('/shop', function () {
 })->name("compare");
 
 
-Route::get('shop/{product}', function (\App\Models\Product $product) {
-    return view('shop.product', compact(["product"]));
-})->name("shop.one");
+
+
+Route::get('shop/{product}', [\App\Http\Controllers\Guest\ProductsController::class, "show"])->name("shop.one");
 
 
 Route::get('products/', [\App\Http\Controllers\Guest\ProductsController::class, "index"])->name("guest.index");
 
 
-
+Route::middleware('auth', )->group(function (){Route::post("product/{rating}/add",[\App\Http\Controllers\Guest\ProductsController::class,"addRating"])->name("product.rating.add");
+});
 
 
 
