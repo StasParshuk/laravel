@@ -109,29 +109,37 @@
                                             </div>
                                         </a></li>
                                 </ul>
-                                <div class="product-quantity m-0">
-                                    <h4>Quantity</h4>
-                                    <div class="product-quantity-box d-flex align-items-center flex-wrap">
-                                        <div class="qty mr-2">
-                                            <div class="qtySelector text-center"><span class="decreaseQty"><i
-                                                        class="flaticon-minus"></i> </span> <input type="number"
-                                                                                                   class="qtyValue"
-                                                                                                   value="1"> <span
-                                                    class="increaseQty"> <i class="flaticon-plus"></i> </span></div>
-                                        </div>
-                                        <div class="product-quantity-check"><i class="flaticon-select"></i>
-                                            <p>Only {{$product->in_stock}} Left ! </p>
+                                <form action="{{route("cart.add",$product)}}" method="POST">
+                                    @csrf
+                                    <div class="product-quantity m-0">
+                                        <h4>Quantity</h4>
+                                        <div class="product-quantity-box d-flex align-items-center flex-wrap">
+                                            <div class="qty mr-2">
+                                                <div class="qtySelector text-center"><span class="decreaseQty">
+                                                        <i class="flaticon-minus"></i> </span>
+                                                    <input type="number"
+                                                           class="qtyValue"
+                                                           value="1"
+                                                    max="{{$product->in_stock}}"
+                                                    name="product_count">
+                                                    <span class="increaseQty"> <i class="flaticon-plus"></i> </span></div>
+                                            </div>
+                                            <div class="product-quantity-check"><i class="flaticon-select"></i>
+                                                <p>Only {{$product->in_stock}} Left ! </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <p class="people-searce"> There are <span>50</span> peoples are cureently looking at
-                                    this product </p>
-                                <div class="shop-details-top-cart-box-btn">
-                                    <button class="btn--primary style2 " type="submit">Add to Cart</button>
-                                </div>
-                                <div class="shop-details-top-buy-now-btn"><a href="{{route("cart")}}"
-                                                                             class="btn--primary">Buy
-                                        It Now</a></div>
+                                    <p class="people-searce"> There are <span>50</span> peoples are cureently looking at
+                                        this product </p>
+
+
+                                    <div class="shop-details-top-cart-box-btn">
+                                        <button class="btn--primary style2 " type="submit">Add to Cart</button>
+                                    </div>
+                                </form>
+                                <div class="shop-details-top-buy-now-btn">
+                                    <a href=""
+                                       class="btn--primary">Buy It Now</a></div>
                                 <div class="shop-details-top-social-box">
                                     <p>Share:</p>
                                     <ul class="ps-1 social_link d-flex align-items-center">
@@ -497,8 +505,9 @@
                     <div class="col-lg-6 mt-30 wow fadeInLeft animated">
                         <!--Start Video One Img-->
                         <div class="video-one__img">
-                            <div class="video-one__img-inner"><img src="{{asset("assets/images/home-two/video-v1-img1.jpg")}}"
-                                                                   alt="">
+                            <div class="video-one__img-inner"><img
+                                    src="{{asset("assets/images/home-two/video-v1-img1.jpg")}}"
+                                    alt="">
                                 <div class="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                                     <a class="video-popup" title="Video Gallery"
                                        href="ttps://www.youtube.com/watch?v=4DCTTrGjGU4"> <i class="flaticon-play"></i>
@@ -550,7 +559,7 @@
                                 </div>
                                 <div class="product-grid-two__overlay-box">
                                     <div class="title">
-                                        <h6><a href="cart.html">Add To Cart</a></h6>
+                                        <h6><a href="{{route("cart.add",$product)}}">Add To Cart</a></h6>
                                     </div>
                                     <div class="icon">
                                         <ul>
@@ -631,12 +640,14 @@
                                                 <div class="add-product">
                                                     <h6>Qty:</h6>
                                                     <div class="button-group">
-                                                        <div class="qtySelector text-center"> <span class="decreaseQty"><i
-                                                                    class="flaticon-minus"></i>
-                                                            </span> <input type="number" class="qtyValue" value="1">
+                                                        <div class="qtySelector text-center"> <span class="decreaseQty">
+                                                                <i class="flaticon-minus"></i>
+                                                            </span>
+                                                            <input type="number" class="qtyValue" value="1">
                                                             <span class="increaseQty"> <i class="flaticon-plus"></i>
                                                             </span></div>
-                                                        <button class="btn--primary "> Add to Cart
+                                                        <button class="btn--primary "
+                                                                href="{{route("cart.add",$product)}}"> Add to Cart
                                                         </button>
                                                     </div>
                                                 </div>

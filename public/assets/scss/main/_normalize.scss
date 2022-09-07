@@ -1,8 +1,8 @@
-/*** 
+/***
 =====================================================
 Normalize Css
 =====================================================
-***/  
+***/
 :root {
   --font-body-family: 'Roboto', sans-serif;
   --font-body-style: normal;
@@ -14,14 +14,14 @@ Normalize Css
   --thm-gray: #555555;
   --thm-dada: #dadada;
   --thm-white: #ffffff;
-  --thm-light: #f7f7f7; 
+  --thm-light: #f7f7f7;
 }
 
 * {
   padding: 0px;
   margin: 0px;
 }
-  
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -97,7 +97,7 @@ button:focus {
 }
 
 img {
-  max-width: 100%;
+  max-width: 70% !important;
   height: auto;
 }
 
