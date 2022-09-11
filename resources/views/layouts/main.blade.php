@@ -73,12 +73,12 @@
 
                 @if(session('success'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        {{ session('success') }}
                     </div>
                 @endif
                 @if(session('warn'))
                     <div class="alert alert-danger" role="alert">
-                        {{ session('status') }}
+                        {{ session('warn') }}
                     </div>
                 @endif
 
