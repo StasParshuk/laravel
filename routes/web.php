@@ -54,11 +54,14 @@ Route::get('products/', [\App\Http\Controllers\Guest\ProductsController::class, 
 
 Route::middleware('auth',)->group(function () {
     Route::post("product/{product}/add", [\App\Http\Controllers\Guest\ProductsController::class, "addRating"])->name("product.rating.add");
+Route::get("wishlist/{product}/add",[\App\Http\Controllers\WishlistController::class,"add"])->name("wishlist.add");
+Route::delete("wishlist/{product}/delete", [\App\Http\Controllers\WishlistController::class,"delete"])->name("wishlist.delete");
+
     Route::name("account.")->prefix("account")->group(function (){
         Route::get("/",[\App\Http\Controllers\Account\UsersController::class,"index"])->name("index");
         Route::get("{user}/edit",[\App\Http\Controllers\Account\UsersController::class,"edit"])->name("edit")->middleware("can:view,user");
         Route::put("{user}",[\App\Http\Controllers\Account\UsersController::class,"update"])->name("update")->middleware("can:update,user");;
-        Route::put("/wishlist",[\App\Http\Controllers\Account\UsersController::class,"update"])->name("wishlist");
+        Route::get("/wishlist",\App\Http\Controllers\Account\WishlistController::class)->name("wishlist");
     });
 });
 

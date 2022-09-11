@@ -215,12 +215,12 @@
                                                                                 </li>
                                                                                 <li><a href="compare.html">Compare
                                                                                     </a></li>
-                                                                                <li><a href="{{route("wishlist")}}">Wishlist
+                                                                                <li><a href="{{route("account.wishlist")}}">Wishlist
                                                                                     </a></li>
                                                                                 <li><a href="{{route("order-track")}}">Order
                                                                                         Track </a>
                                                                                 </li>
-                                                                                <li><a href="{{route("home")}}">My
+                                                                                <li><a href="{{route("account.index")}}">My
                                                                                         Account </a>
                                                                                 </li>
                                                                                 <li><a href="{{route("blog-many")}}">Blog</a>
@@ -259,7 +259,7 @@
                                                         <li><a href="{{route("contact")}}">Contact</a></li>
                                                         <li><a href="{{route("faq")}}">FAQ</a></li>
                                                         <li><a href="{{route("order-track")}}">Order_Track</a></li>
-                                                        <li><a href="{{route("home")}}">My_Account</a></li>
+                                                        <li><a href="{{route("account.index")}}">My_Account</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown-list"><a href="{{route("contact")}}">Contact</a>
@@ -272,10 +272,10 @@
                                             <ul class="main-menu__widge-box d-flex align-items-center ">
                                                 <li class="d-lg-block d-none"><a href="{{route("home")}}"><i
                                                             class="flaticon-user"></i> </a></li>
-                                                <li class="d-lg-block d-none"><a href="{{route("wishlist")}}"
+                                                <li class="d-lg-block d-none"><a href="{{route("account.wishlist")}}"
                                                                                  class="number"><i
                                                             class="flaticon-heart"></i> <span
-                                                            class="count">(@if(Cart::instance('cart')->count() > 0) {{ Cart::instance('cart')->count() }} @endif)</span> </a></li>
+                                                            class="count">(@if(Cart::instance('wishlist')->count() > 0) {{ Cart::instance('wishlist')->count() }} @endif)</span> </a></li>
                                                 <li class="cart"><a href="{{route("cart")}}" class="number cart-icon">
                                                         <i class="flaticon-shopping-cart"></i>
                                                         <span class="count">(@if(Cart::instance('cart')->count() > 0) {{ Cart::instance('cart')->count() }} @endif)</span>
@@ -336,7 +336,7 @@
                             <li><a href="{{route("home")}}">Account</a></li>
                             <li><a href="{{route("login")}}">Sign In</a></li>
                             <li><a href="{{route("cart")}}">View Cart</a></li>
-                            <li><a href="{{route("wishlist")}}">My WishList</a></li>
+                            <li><a href="{{route("account.wishlist")}}">My WishList</a></li>
                             <li><a href="compare.html">Compare Products</a></li>
                         </ul>
                     </div>
