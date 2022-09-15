@@ -15,9 +15,11 @@
         "laravel/telescope": "^4.9",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
+        "srmklive/paypal": "^3.0",
         "symfony/http-client": "^6.1",
         "symfony/mailgun-mailer": "^6.1",
-        "willvincent/laravel-rateable": "^3.0"
+        "willvincent/laravel-rateable": "^3.0",
+      "ext-mysql_xdevapi": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",

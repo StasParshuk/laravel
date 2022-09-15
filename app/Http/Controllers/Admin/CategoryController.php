@@ -15,7 +15,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-
+Category::query()->where("id","=",1);
         $products = Category::paginate(12);
 
         return view("admin.categories.index", compact('products'));

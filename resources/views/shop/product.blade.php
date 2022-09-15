@@ -64,7 +64,7 @@
                                             <div class="shop-details-top-review flex-row-reverse justify-content-end">
                                                 @if(!is_null($userRating))
                                                     @for($i = 5; $i >= 1; $i--)
-                                                        <input class="star star-{{$i}}"
+                                                        <input class="star star-{{$i}} "
                                                                value="{{$i}}"
                                                                id="star-{{$i}}"
                                                                type="radio"
@@ -75,7 +75,7 @@
                                                             : ''
                                                             }}
                                                         />
-                                                        <label class="star star-{{$i}}" for="star-{{$i}}"></label>
+                                                        <label class="star  star-{{$i}} " for="star-{{$i}}"></label>
                                                     @endfor
                                                 @else
                                                     <input class="star star-5" value="5" id="star-5" type="radio" name="star"/>

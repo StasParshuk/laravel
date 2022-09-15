@@ -73,5 +73,11 @@ public function followers()
      "product_id",
      "user_id");
 }
+
+public function orders(){
+        return $this->belongsToMany(Order::class);
+}
+
+
 }
 

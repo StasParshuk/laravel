@@ -8,9 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name("welcome");
 
-Route::get('/test', function () {
-    return view('indexx');
-});
 
 Route::get('/wishlist', function () {
     return view('wishlist');
@@ -56,6 +53,7 @@ Route::middleware('auth',)->group(function () {
     Route::post("product/{product}/add", [\App\Http\Controllers\Guest\ProductsController::class, "addRating"])->name("product.rating.add");
 Route::get("wishlist/{product}/add",[\App\Http\Controllers\WishlistController::class,"add"])->name("wishlist.add");
 Route::delete("wishlist/{product}/delete", [\App\Http\Controllers\WishlistController::class,"delete"])->name("wishlist.delete");
+Route::post("order",\App\Http\Controllers\OrdersController::class)->name("order.create");
 
     Route::name("account.")->prefix("account")->group(function (){
         Route::get("/",[\App\Http\Controllers\Account\UsersController::class,"index"])->name("index");
@@ -63,12 +61,14 @@ Route::delete("wishlist/{product}/delete", [\App\Http\Controllers\WishlistContro
         Route::put("{user}",[\App\Http\Controllers\Account\UsersController::class,"update"])->name("update")->middleware("can:update,user");;
         Route::get("/wishlist",\App\Http\Controllers\Account\WishlistController::class)->name("wishlist");
     });
+
 });
 
 Route::get('cart', [\App\Http\Controllers\CartController::class, 'index'])->name('cart');
 Route::post('cart/{product}', [\App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
 Route::delete('cart', [\App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
 Route::post('cart/{product}/count', [\App\Http\Controllers\CartController::class, 'countUpdate'])->name('cart.count.update');
+Route::get("cart/checkout",\App\Http\Controllers\CheckoutController::class)->name("cart.checkout");
 
 
 Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(
@@ -108,4 +108,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware("auth")->name('home');
 
 Route::delete("ajax/images/{image}", \App\Http\Controllers\Ajax\RemoveImageController::class)->middleware("auth", "admin")->name("ajax.images.delete");
+
+
+Route::prefix("paypal")->group(function(){
+    Route::post("order/create",[\App\Http\Controllers\Payments\PaypalPaymentController::class,"create"]);
+    Route::post("order/{orderId}/capture",[\App\Http\Controllers\Payments\PaypalPaymentController::class,"capture"]);
+});
 

@@ -44,6 +44,10 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function orders(){
+       return$this->hasMany(Order::class);
+    }
+
     public function wishies()
     {
         return $this->belongsToMany(

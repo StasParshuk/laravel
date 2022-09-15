@@ -210,6 +210,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        "Paypal" => \Srmklive\PayPal\Facades\PayPal::class
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
