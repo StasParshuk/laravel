@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Payments;
 use App\Events\OrderCreatedEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateOrderRequest;
+use App\Notifications\OrderCreatedNotification;
 use App\Repositories\Contracts\OrderRepositoryContract;
 use App\Helpers\TransactionDataAdapter;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -63,6 +64,7 @@ class PaypalPaymentController extends Controller
                 $result['status']
             ));
             $result['orderId'] = $order->id;
+
             OrderCreatedEvent::dispatch($order);
 
             DB::commit();
