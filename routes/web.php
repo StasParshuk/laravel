@@ -1,7 +1,15 @@
 <?php
 
+use App\Jobs\OrderCreatedNotificationJob;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('send', function () {
+    $order = \App\Models\Order::all()->random();
+    OrderCreatedNotificationJob::dispatch($order)->onQueue('emails');
+});
+
 
 
 Route::get('/', function () {
@@ -60,7 +68,13 @@ Route::post("order",\App\Http\Controllers\OrdersController::class)->name("order.
         Route::get("{user}/edit",[\App\Http\Controllers\Account\UsersController::class,"edit"])->name("edit")->middleware("can:view,user");
         Route::put("{user}",[\App\Http\Controllers\Account\UsersController::class,"update"])->name("update")->middleware("can:update,user");;
         Route::get("/wishlist",\App\Http\Controllers\Account\WishlistController::class)->name("wishlist");
+        Route::get("/orders",[\App\Http\Controllers\Account\UserOrdersController::class,"index"])->name("orders");
+        Route::get("/orders/{order}",[\App\Http\Controllers\Account\UserOrdersController::class,"show"])->name("orders.show");
+        Route::delete("/orders/{order}/cancel",[\App\Http\Controllers\Account\UserOrdersController::class,"cancel"])->name("orders.cancel");
+        Route::get("/telegram/callback",\App\Http\Controllers\TelegramCallbackController::class)->name("telegram.callback");
     });
+
+
 
 });
 
@@ -99,7 +113,13 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(
             Route::delete('category/{category}', [\App\Http\Controllers\Admin\CategoryController::class, "destroy"])->name(".destroy");
         }
 
+
         );
+        Route::name('orders')->group(function () {
+            Route::get('orders', [\App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('.index');
+            Route::get('orders/{order}/edit', [\App\Http\Controllers\Admin\OrdersController::class, 'edit'])->name('.edit');
+            Route::put('orders/{order}', [\App\Http\Controllers\Admin\OrdersController::class, 'update'])->name('.update');
+        });
 
     });
 

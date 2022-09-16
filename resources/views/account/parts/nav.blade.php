@@ -9,9 +9,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('account.wishlist') }}">{{ __('WishList') }}</a>
                 </li>
-                {{--                <li class="nav-item">--}}
-                {{--                    <a class="nav-link" href="{{ route('account.orders.list') }}">{{ __('My orders') }}</a>--}}
-                {{--                </li>--}}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('account.orders') }}">{{ __('My orders') }}</a>
+                                </li>
             </ul>
         </div>
     </div>

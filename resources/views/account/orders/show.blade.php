@@ -64,6 +64,7 @@
                                     <form method="POST" class="w-100 text-right"
                                           action="{{ route('account.orders.cancel', $order) }}">
                                         @csrf
+                                        @method("delete")
                                         <input type="submit" class="btn btn-outline-danger" value="Cancel order"/>
                                     </form>
                                 @endif

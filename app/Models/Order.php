@@ -40,4 +40,5 @@ class Order extends Model
             get: fn() => $this->status->name === OrderStatusesEnum::InProcess->value
         );
     }
+
 }

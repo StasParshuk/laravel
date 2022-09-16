@@ -258,7 +258,7 @@
                                                         <li><a href="{{route("about")}}">About Us </a></li>
                                                         <li><a href="{{route("contact")}}">Contact</a></li>
                                                         <li><a href="{{route("faq")}}">FAQ</a></li>
-                                                        <li><a href="{{route("order-track")}}">Order_Track</a></li>
+                                                        <li><a href="{{route("account.orders")}}">Order_Track</a></li>
                                                         <li><a href="{{route("account.index")}}">My_Account</a></li>
                                                     </ul>
                                                 </li>

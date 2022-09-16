@@ -49,7 +49,6 @@
         </section>
         <!--End Product Categories One-->
 
-        @dump($products)
         <!--Start product-grid-->
         <div class="product-grid pt-60 pb-120">
             <div class="container">
