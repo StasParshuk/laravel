@@ -13,7 +13,7 @@
                             <div class="breadcrumb-menu">
                                 <ul>
                                     <li><a href="index.html"><i class="flaticon-home pe-2"></i>Home</a></li>
-                                    <li> <i class="flaticon-next"></i> </li>
+                                    <li><i class="flaticon-next"></i></li>
                                     <li class="active">Cart</li>
                                 </ul>
                             </div>
@@ -26,7 +26,6 @@
         <!--Start cart area-->
 
 
-
         <section class="cart-area pt-120 pb-120">
             <div class="container">
                 <div class="row wow fadeInUp animated">
@@ -35,28 +34,22 @@
                             <div class="table-outer">
                                 @if(Cart::instance('cart')->count() > 0)
 
+                                    <table class="cart-table">
+                                        <thead class="cart-header">
+                                        <tr>
+                                            <th class="">Product Name</th>
+                                            <th class="price">Price</th>
+                                            <th>Quantity</th>
+                                            <th>Subtotal</th>
+                                            <th class="hide-me"></th>
+                                        </tr>
+                                        </thead>
 
 
-
-                                <table class="cart-table">
-                                    <thead class="cart-header">
-                                    <tr>
-                                        <th class="">Product Name</th>
-                                        <th class="price">Price</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                        <th class="hide-me"></th>
-                                    </tr>
-                                    </thead>
+                                        @each('cart.parts.product_view', Cart::instance('cart')->content(), 'row')
 
 
-                                    @each('cart.parts.product_view', Cart::instance('cart')->content(), 'row')
-
-
-
-                                </table>
-
-
+                                    </table>
 
                                 @else
                                     <h3 class="text-center">There are no products in cart</h3>
@@ -69,11 +62,18 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="cart-button-box" style="justify-content: flex-end">
-                            <div style="justify-content: flex-end" class="cart-button-box-right wow fadeInUp animated flex-col-reverse">
+                            <div style="justify-content: flex-end"
+                                 class="cart-button-box-right wow fadeInUp animated flex-col-reverse">
                                 <form action="{{route("guest.index")}}" method="get">
-                                <button  class="btn--primary mt-30" type="submit">Continue Shopping</button>
+                                    <button class="btn--primary mt-30" type="submit">Continue Shopping</button>
                                 </form>
-                                <button class="btn--primary mt-30" type="submit">Update Cart</button> </div>
+                                <button class="btn--primary mt-30" type="submit">Update Cart</button>
+                                <form action="{{route("cart.checkout")}}" method="get">
+                                    <button class="  btn--primary mt-30" type="submit">Checkout</button>
+                                </form>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,6 @@
                     </div>
                 </div>
                 <div class="row mt--30">
-
 
 
                     <div class="col-xl-6 col-lg-5 wow fadeInUp animated">
@@ -133,6 +132,5 @@
         </section>
         <!--End cart area-->
     </main>
-
 
 @endsection

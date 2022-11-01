@@ -13,7 +13,7 @@
 
                     <a class="btn--primary mb-3"  href="{{route("admin.category.index")}}">view category and edit </a>
 
-                    <a class="btn--primary mb-3" href="{{route("admin.category.create")}}">Create category</a>
+                    <a class="btn--primary mb-3" href="{{route("admin.orders.index")}}">orders view</a>
 
                     <div class="card-body">
                         @if (session('status'))

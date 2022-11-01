@@ -35,7 +35,7 @@
                                    class="col-md-4   align-content-center d-flex">{{ __('Category') }}</label>
                             <div class="form-group">
                                 <select class="form-select" type="" aria-label="Default select example" name="category_id" >
-                                    <option selected value="{{$product->category_id}}">{{$categories[$product->category_id]->name}}</option>
+                                    <option selected value="{{$product->category_id}}">{{$categories[$product->category_id-1]->name}}</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach

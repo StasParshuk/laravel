@@ -11,6 +11,7 @@ export default defineConfig({
                 'public/assets/scss/style.scss',
                 'resources/js/images-preview.js',
                 'resources/js/images-actions.js',
+                'resources/js/paypal-payments.js',
             ],
             refresh: true,
         }),

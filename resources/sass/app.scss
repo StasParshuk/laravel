@@ -1,18 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
 
 
-@import "node_modules/font-awesome/scss/font-awesome.scss";
 
 
-@import 'node_modules/font-awesome/scss/core';
-@import 'node_modules/font-awesome/scss/icons';
-@import 'node_modules/font-awesome/scss/animated';
+
+//@import "fonts/flaticon.css";
+//@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+
 
 .form-group {
     margin: 4px 0;
@@ -23,7 +17,9 @@ div.stars {
     display: inline-block;
 }
 
-input.star { display: none; }
+input.star {
+    display: none;
+}
 
 label.star {
     float: right;
@@ -34,8 +30,8 @@ label.star {
 }
 
 input.star:checked ~ label.star:before {
-    content: '\f005';
-    color: #e74c3c;
+    content: "\f005";
+    color: #cb2121;
     transition: all .25s;
 }
 
@@ -44,11 +40,15 @@ input.star-5:checked ~ label.star:before {
     text-shadow: 0 0 5px #7f8c8d;
 }
 
-input.star-1:checked ~ label.star:before { color: #F62; }
+input.star-1:checked ~ label.star:before {
+    color: #F62;
+}
 
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
+label.star:hover {
+    transform: rotate(-15deg) scale(1.3);
+}
 
 label.star:before {
-    content: '\f005';
+    content: "\f005";
     font-family: 'Font Awesome 5 Free', sans-serif;
 }

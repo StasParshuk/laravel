@@ -64,7 +64,7 @@
                                             <div class="shop-details-top-review flex-row-reverse justify-content-end">
                                                 @if(!is_null($userRating))
                                                     @for($i = 5; $i >= 1; $i--)
-                                                        <input class="star star-{{$i}}"
+                                                        <input class="star star-{{$i}} "
                                                                value="{{$i}}"
                                                                id="star-{{$i}}"
                                                                type="radio"
@@ -75,7 +75,7 @@
                                                             : ''
                                                             }}
                                                         />
-                                                        <label class="star star-{{$i}}" for="star-{{$i}}"></label>
+                                                        <label class="star  star-{{$i}} " for="star-{{$i}}"></label>
                                                     @endfor
                                                 @else
                                                     <input class="star star-5" value="5" id="star-5" type="radio" name="star"/>
@@ -89,6 +89,7 @@
                                                     <input class="star star-1" value="1" id="star-1" type="radio" name="star"/>
                                                     <label class="star star-1" for="star-1"></label>
                                                 @endif
+
                                             </div>
                                         </div>
                                     </form>
@@ -97,6 +98,16 @@
 
                                 <div class="shop-details-top-review-box">
                                     <div class="shop-details-top-review">
+                                        @if(is_user_followed($product))
+                                            <form action="{{ route('wishlist.delete', $product) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" class="btn btn-danger" value="Remove from Wish List">
+                                            </form>
+                                        @else
+                                            <a href="{{ route('wishlist.add', $product) }}"
+                                               class="btn btn-success">{{ __('Add to Wish List') }}</a>
+                                        @endif
                                         <ul>
                                             <li><i class="flaticon-"></i></li>
 
